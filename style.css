@@ -19,6 +19,54 @@ body {
   padding-bottom: 96px;
 }
 
+/* ---------- menu de arriba (sale en las dos paginas) ---------- */
+
+.menu {
+  margin-bottom: 56px;
+}
+
+/* los links del menu como botoncitos redondos, el display inline-block es pa que acepten padding y queden uno al lado del otro */
+/* el text-decoration none le quita la rayita de abajo que traen los links */
+.menu a {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 8px 18px;
+  border: 1px solid #ddd4c3;
+  border-radius: 20px;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #5b5a52;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.menu a:hover {
+  border-color: #e07b00;
+  color: #e07b00;
+}
+
+/* la pagina en la que estas sale rellena de verde */
+.menu .actual,
+.menu .actual:hover {
+  background-color: #2e8b3a;
+  border-color: #2e8b3a;
+  color: #ffffff;
+}
+
+/* ---------- cosas de la pagina del soundtrack ---------- */
+
+/* el encabezado del soundtrack no tiene portada, nomas le pongo un ancho maximo pa que el texto no quede tan largo */
+.encabezado {
+  max-width: 900px;
+  position: relative;
+  animation: entrar 0.8s;
+}
+
+/* cada seccion del soundtrack, nomas es pa separarlas */
+.seccion {
+  margin-top: 80px;
+}
+
 /* esta es la animacion de entrada, from es como empieza y to es como termina */
 /* empieza invisible y 20px mas abajo, y termina visible en su lugar */
 @keyframes entrar {
