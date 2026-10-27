@@ -325,8 +325,7 @@ body {
   width: 23%;
   margin-right: 2.66%;
   margin-bottom: 24px;
-  min-height: 210px;
-  padding: 24px;
+  overflow: hidden;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
   border-radius: 16px;
@@ -342,33 +341,43 @@ body {
 .chico:hover {
   top: -4px;
   border-color: #e07b00;
+  box-shadow: 0px 12px 30px #f1d5aa;
 }
 
-/* el circulito con la letra, el border-radius 50% es lo que lo hace redondo */
-/* y el line-height igual que el alto es un truquito pa que la letra quede centrada de arriba a abajo */
-.inicial {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: #f1d5aa;
-  color: #e07b00;
-  font-family: Anton, Impact, sans-serif;
-  font-size: 22px;
-  text-align: center;
-  line-height: 44px;
+/* la foto de arriba de cada cajita, las fotos son cuadradas y aqui las corto a 170 de alto */
+/* el center top es pa que corte lo de abajo y no la cara, y el display block quita un huequito feo que deja la img abajo */
+.chico-foto {
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  object-position: center top;
+  background-color: #e9e1d2;
+  transition: all 0.6s;
+}
+
+/* el mismo zoomcito que las tarjetas grandes pa que se sienta igual */
+.chico:hover .chico-foto {
+  transform: scale(1.06);
+}
+
+/* el texto va en su propia cajita con padding, asi la foto llega hasta las orillas y el texto no */
+.chico-info {
+  padding: 20px 24px 24px 24px;
 }
 
 .chico-nombre {
-  margin-top: 16px;
   font-size: 17px;
   font-weight: bold;
 }
 
+/* el min-height es pa que todas las cajitas midan lo mismo aunque un texto sea mas cortito */
 .chico-texto {
   margin-top: 8px;
   font-size: 14px;
   line-height: 1.55;
   color: #5b5a52;
+  min-height: 66px;
 }
 
 .pie {
@@ -451,6 +460,12 @@ le quito los float pa que todo quede uno abajo del otro */
     float: none;
     width: 100%;
     margin-right: 0px;
+  }
+  /* en el cel la cajita es mas ancha, entonces le doy mas alto a la foto pa que no se vea aplastada */
+  .chico-foto {
+    height: 260px;
+  }
+  .chico-texto {
     min-height: 0px;
   }
 }
