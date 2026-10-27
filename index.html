@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <!-- esto es pa que en el cel no se vea todo chiquito y feo, sin esto se ve bien mal we -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA V · Personajes</title>
+    <!-- las letras las saque de google fonts alv, la Anton es la que mas se parece a la del GTA (la neta no es igual pero ahi la lleva) -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <!-- el onload hace que jale iniciar() ya que cargo todo, y el onscroll corre revisarScroll() cada vez que le bajas a la pagina, bien chido -->
+  <body onload="iniciar()" onscroll="revisarScroll()">
+    <div class="contenedor">
+
+      <!-- lo de arriba: el texto a la izquierda y la portada a la derecha, asi bien acomodadito -->
+      <div id="arriba">
+        <div id="izquierda">
+          <p class="eyebrow">GRAND THEFT AUTO V · LOS PERSONAJES</p>
+          <h1 class="titulo">Tres criminales. Una ciudad.</h1>
+          <p class="intro">GTA V sigue a tres criminales muy distintos en Los Santos, una ciudad inspirada en Los Ángeles. Un exladrón retirado, un joven de las calles y un psicópata del desierto unen fuerzas para dar los golpes más grandes de San Andreas. Por primera vez en la saga puedes cambiar entre los tres cuando quieras, y cada uno tiene su propia historia, su casa y su habilidad especial.</p>
+
+          <!-- los numeritos de abajo del texto, son 3 cajitas una al lado de la otra -->
+          <div class="numeros">
+            <div class="numero">
+              <p class="cifra">4</p>
+              <p class="etiqueta">PERSONAJES PRINCIPALES</p>
+            </div>
+            <div class="numero">
+              <p class="cifra">3</p>
+              <p class="etiqueta">PROTAGONISTAS JUGABLES</p>
+            </div>
+            <div class="numero">
+              <p class="cifra">3</p>
+              <p class="etiqueta">FINALES DISTINTOS</p>
+            </div>
+          </div>
+        </div>
+        <div id="derecha">
+          <!-- OJO we: el referrerpolicy="no-referrer" es pa que la wiki no bloquee la imagen, si se lo quitas ya no sale nada, me tarde un buen en averiguar eso -->
+          <img src="https://static.wikia.nocookie.net/gtawiki/images/7/76/CoverArt-GTAV.png/revision/latest?cb=20250708181846" alt="Portada de GTA V" id="portada" referrerpolicy="no-referrer">
+        </div>
+      </div>
+
+      <div class="tarjetas">
+
+        <!-- la de michael. el numerito de seleccionar(1) es pa que el js sepa a cual tarjeta le picaste -->
+        <div class="tarjeta" id="tarjeta1" onclick="seleccionar(1)">
+          <div class="foto">
+            <img src="https://static.wikia.nocookie.net/gtawiki/images/2/2f/Artwork-MichaelDeSanta-GTAV.jpg/revision/latest/scale-to-width-down/800?cb=20130513172502" alt="Michael" referrerpolicy="no-referrer">
+          </div>
+          <div class="info">
+            <h2 class="nombre">MICHAEL</h2>
+            <p class="lema">El ladrón retirado</p>
+            <p class="texto">Fue uno de los mejores ladrones de bancos del país hasta que hizo un trato con el FIB y fingió su muerte. Ahora vive en una mansión con una familia que no lo soporta. El aburrimiento lo empuja de vuelta al único trabajo que sabe hacer: robar.</p>
+            <div class="datos">
+              <div>
+                <p class="valor">Rockford Hills</p>
+                <p class="etiqueta">BARRIO DONDE VIVE</p>
+              </div>
+              <!-- la class derecha es nomas pa mandar el texto a la derecha, no tiene nada que ver con el id derecha de arriba, les puse igual sin querer jaja pero ya ni modo -->
+              <div class="derecha">
+                <p class="valor">Planificador</p>
+                <p class="etiqueta">PAPEL EN LOS GOLPES</p>
+              </div>
+            </div>
+            <p class="ver-mas">Ver ficha completa →</p>
+          </div>
+        </div>
+
+        <!-- franklin, el compa -->
+        <div class="tarjeta" id="tarjeta2" onclick="seleccionar(2)">
+          <div class="foto">
+            <img src="https://static.wikia.nocookie.net/gtawiki/images/f/f9/Artwork-FranklinClinton-GTAV.jpg/revision/latest/scale-to-width-down/800?cb=20130513172527" alt="Franklin" referrerpolicy="no-referrer">
+          </div>
+          <div class="info">
+            <h2 class="nombre">FRANKLIN</h2>
+            <p class="lema">Hambre de algo más grande</p>
+            <p class="texto">Creció en el sur de Los Santos y recupera autos para un concesionario de dudosa reputación. Está cansado de los negocios pequeños de la calle y quiere salir del barrio. Al conocer a Michael encuentra al mentor que lo mete en los grandes golpes.</p>
+            <div class="datos">
+              <div>
+                <p class="valor">Strawberry</p>
+                <p class="etiqueta">BARRIO DONDE VIVE</p>
+              </div>
+              <div class="derecha">
+                <p class="valor">Conductor</p>
+                <p class="etiqueta">PAPEL EN LOS GOLPES</p>
+              </div>
+            </div>
+            <p class="ver-mas">Ver ficha completa →</p>
+          </div>
+        </div>
+
+        <!-- trevor, el loco -->
+        <div class="tarjeta" id="tarjeta3" onclick="seleccionar(3)">
+          <div class="foto">
+            <img src="https://static.wikia.nocookie.net/gtawiki/images/8/89/Artwork-TrevorPhilips-GTAV.jpg/revision/latest/scale-to-width-down/800?cb=20130513172552" alt="Trevor" referrerpolicy="no-referrer">
+          </div>
+          <div class="info">
+            <h2 class="nombre">TREVOR</h2>
+            <p class="lema">Caos sin filtro</p>
+            <p class="texto">Antiguo socio de Michael, al que creía muerto. Quiso ser piloto militar pero lo sacaron por su inestabilidad. Vive en una caravana en el desierto, dirige su propio negocio y resuelve todo de la forma más violenta e impredecible.</p>
+            <div class="datos">
+              <div>
+                <p class="valor">Sandy Shores</p>
+                <p class="etiqueta">BARRIO DONDE VIVE</p>
+              </div>
+              <div class="derecha">
+                <p class="valor">Piloto</p>
+                <p class="etiqueta">PAPEL EN LOS GOLPES</p>
+              </div>
+            </div>
+            <p class="ver-mas">Ver ficha completa →</p>
+          </div>
+        </div>
+
+        <!-- lester, a este no lo puedes jugar pero sin el no hay golpes, es el cerebrito -->
+        <div class="tarjeta" id="tarjeta4" onclick="seleccionar(4)">
+          <div class="foto">
+            <img src="https://static.wikia.nocookie.net/gtawiki/images/b/b5/Artwork-Lester-GTAV.jpg/revision/latest/scale-to-width-down/800?cb=20130906154759" alt="Lester" referrerpolicy="no-referrer">
+          </div>
+          <div class="info">
+            <h2 class="nombre">LESTER</h2>
+            <p class="lema">El cerebro de los golpes</p>
+            <p class="texto">Viejo amigo de Michael, hacker y estratega. Una enfermedad lo obliga a usar bastón, así que trabaja desde su casa llena de pantallas: investiga el objetivo, elige al equipo y encuentra el punto débil de la seguridad.</p>
+            <div class="datos">
+              <div>
+                <p class="valor">Murrieta Heights</p>
+                <p class="etiqueta">BARRIO DONDE VIVE</p>
+              </div>
+              <div class="derecha">
+                <p class="valor">Hacker</p>
+                <p class="etiqueta">PAPEL EN LOS GOLPES</p>
+              </div>
+            </div>
+            <p class="ver-mas">Ver ficha completa →</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- aqui salen las fichas, solo se ve una a la vez (la de la tarjeta que le picaste), el js las prende y las apaga -->
+      <div id="fichas">
+        <p class="pista" id="pista">Dale clic a un personaje para ver su ficha completa</p>
+
+        <div class="ficha" id="ficha1">
+          <p class="eyebrow">FICHA DEL PERSONAJE</p>
+          <h3 class="ficha-nombre">Michael De Santa</h3>
+          <ul class="lista">
+            <li><b>Nombre real:</b> Michael Townley. Se cambió el nombre cuando hizo el trato con el FIB.</li>
+            <li><b>Familia:</b> su esposa Amanda y sus hijos Jimmy y Tracey.</li>
+            <li><b>Habilidad especial:</b> el tiempo se hace lento cuando apunta, así dispara con más precisión.</li>
+            <li><b>Su carro:</b> un Obey Tailgater, un sedán negro.</li>
+            <li><b>Dato curioso:</b> le encantan las películas viejas y va a terapia con el Dr. Friedlander.</li>
+          </ul>
+        </div>
+
+        <div class="ficha" id="ficha2">
+          <p class="eyebrow">FICHA DEL PERSONAJE</p>
+          <h3 class="ficha-nombre">Franklin Clinton</h3>
+          <ul class="lista">
+            <li><b>Dónde empieza:</b> vive con su tía Denise en Forum Drive, en Strawberry.</li>
+            <li><b>Sus compas:</b> su mejor amigo Lamar Davis y Chop, el perro que termina cuidando.</li>
+            <li><b>Habilidad especial:</b> el tiempo se hace lento cuando maneja, para esquivar todo a toda velocidad.</li>
+            <li><b>Su carro:</b> un Bravado Buffalo S.</li>
+            <li><b>Dato curioso:</b> a mitad de la historia se muda a una mansión en Vinewood Hills.</li>
+          </ul>
+        </div>
+
+        <div class="ficha" id="ficha3">
+          <p class="eyebrow">FICHA DEL PERSONAJE</p>
+          <h3 class="ficha-nombre">Trevor Philips</h3>
+          <ul class="lista">
+            <li><b>De dónde es:</b> nació en Canadá.</li>
+            <li><b>Su negocio:</b> Trevor Philips Industries, que maneja con Ron y Wade.</li>
+            <li><b>Habilidad especial:</b> modo furia, hace más daño y recibe menos.</li>
+            <li><b>Su carro:</b> una Canis Bodhi, una pick-up para el desierto.</li>
+            <li><b>Dato curioso:</b> lo entrenaron como piloto en el ejército, pero lo sacaron por una evaluación psicológica.</li>
+          </ul>
+        </div>
+
+        <div class="ficha" id="ficha4">
+          <p class="eyebrow">FICHA DEL PERSONAJE</p>
+          <h3 class="ficha-nombre">Lester Crest</h3>
+          <ul class="lista">
+            <li><b>Qué hace:</b> planea los golpes, investiga a los objetivos y consigue al equipo.</li>
+            <li><b>Su relación con Michael:</b> se conocen desde los golpes que Michael hacía antes de "morir".</li>
+            <li><b>¿Se puede jugar?:</b> no, pero aparece en todas las misiones importantes.</li>
+            <li><b>Dónde trabaja:</b> desde su casa en Murrieta Heights, llena de computadoras.</li>
+            <li><b>Dato curioso:</b> también te da trabajos en GTA Online.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- los personajes secundarios, empiezan escondidos y salen cuando bajas, igual que las tarjetas -->
+      <div class="secundarios" id="secundarios">
+        <p class="eyebrow">LOS QUE LOS ACOMPAÑAN</p>
+        <h2 class="subtitulo">Personajes secundarios</h2>
+
+        <div class="chicos">
+          <div class="chico">
+            <p class="inicial">L</p>
+            <p class="chico-nombre">Lamar Davis</p>
+            <p class="chico-texto">El mejor amigo de Franklin. Habla mucho y siempre lo mete en broncas.</p>
+          </div>
+          <div class="chico">
+            <p class="inicial">C</p>
+            <p class="chico-nombre">Chop</p>
+            <p class="chico-texto">El rottweiler de Lamar que termina viviendo con Franklin. Lo puedes sacar a pasear.</p>
+          </div>
+          <div class="chico">
+            <p class="inicial">A</p>
+            <p class="chico-nombre">Amanda De Santa</p>
+            <p class="chico-texto">La esposa de Michael. Se la pasa de compras y peleando con él.</p>
+          </div>
+          <!-- a la cuarta le puse la clase ultimo pa quitarle el margen, igual que la tarjeta 4 -->
+          <div class="chico ultimo">
+            <p class="inicial">J</p>
+            <p class="chico-nombre">Jimmy De Santa</p>
+            <p class="chico-texto">El hijo de Michael. Flojo, vive pegado a los videojuegos y todo el día pide dinero.</p>
+          </div>
+          <div class="chico">
+            <p class="inicial">T</p>
+            <p class="chico-nombre">Tracey De Santa</p>
+            <p class="chico-texto">La hija de Michael. Quiere ser famosa a como dé lugar, hasta en programas de la tele.</p>
+          </div>
+          <div class="chico">
+            <p class="inicial">R</p>
+            <p class="chico-nombre">Ron Jakowski</p>
+            <p class="chico-texto">El vecino paranoico de Trevor y su socio en Trevor Philips Industries.</p>
+          </div>
+          <div class="chico">
+            <p class="inicial">W</p>
+            <p class="chico-nombre">Wade Hebert</p>
+            <p class="chico-texto">Un muchacho muy inocente que sigue a Trevor a todos lados.</p>
+          </div>
+          <div class="chico ultimo">
+            <p class="inicial">D</p>
+            <p class="chico-nombre">Dave Norton</p>
+            <p class="chico-texto">El agente del FIB que hizo el trato con Michael para que fingiera su muerte.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="pie">Proyecto escolar · GTA V y sus personajes son de Rockstar Games</p>
+    </div>
+
+    <!-- el boton pa subir, esta escondido y el js lo enseña cuando ya bajaste un buen -->
+    <button id="subir" onclick="subir()">↑</button>
+
+    <!-- el script va hasta abajo pa que primero cargue todo el html, asi no hay problemas -->
+    <script src="script.js"></script>
+  </body>
+</html>

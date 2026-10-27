@@ -1,0 +1,456 @@
+/* el * agarra TODO TODO, es pa quitarle los margenes que el navegador pone porque se le da la gana */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5efe3;
+  color: #1c1e1a;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0px auto;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+/* esta es la animacion de entrada, from es como empieza y to es como termina */
+/* empieza invisible y 20px mas abajo, y termina visible en su lugar */
+@keyframes entrar {
+  from {
+    opacity: 0;
+    top: 20px;
+  }
+  to {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+/* el overflow hidden es pa que el div de arriba no se haga chiquito por culpa de los float, si no se lo pongo se encima todo alv */
+/* y le puse la animacion entrar pa que lo de arriba salga suavecito cuando abres la pagina */
+#arriba {
+  overflow: hidden;
+  position: relative;
+  animation: entrar 0.8s;
+}
+
+/* el float left manda el texto a la izquierda y el float right manda la portada a la derecha */
+#izquierda {
+  float: left;
+  width: 70%;
+}
+
+#derecha {
+  float: right;
+  width: 260px;
+}
+
+/* la portada con height auto pa que no salga aplastada, se acomoda solita */
+#portada {
+  width: 260px;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid #ddd4c3;
+}
+
+.eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #2e8b3a;
+}
+
+.titulo {
+  font-family: Anton, Impact, sans-serif;
+  font-weight: normal;
+  font-size: 88px;
+  margin-top: 28px;
+  margin-bottom: 32px;
+  color: #e07b00;
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #5b5a52;
+}
+
+/* los numeritos de abajo del texto, otra vez con float pa que queden en fila */
+.numeros {
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.numero {
+  float: left;
+  margin-right: 48px;
+}
+
+.cifra {
+  font-family: Anton, Impact, sans-serif;
+  font-size: 44px;
+  color: #e07b00;
+}
+
+.tarjetas {
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+/* las 4 tarjetas con float left pa que queden en fila, 23% cada una y el margen de 2.66% pa que todo sume 100 (lo saque con calculadora jaja) */
+/* empiezan invisibles (opacity 0) y 24px mas abajo, luego el js les pone la clase visible y ahi si salen, como de fantasma */
+.tarjeta {
+  float: left;
+  width: 23%;
+  margin-right: 2.66%;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  top: 24px;
+  opacity: 0;
+  transition: all 0.6s;
+}
+
+/* a la ultima le quito el margen porque si no ya no cabe y se baja*/
+#tarjeta4 {
+  margin-right: 0px;
+}
+
+.visible {
+  opacity: 1;
+  top: 0px;
+}
+
+/* cuando le pasas el mouse se sube tantito y se le pone el borde naranja, nomas pa que se mire chidori */
+.visible:hover {
+  top: -6px;
+  border-color: #e07b00;
+  box-shadow: 0px 16px 40px #f1d5aa;
+}
+
+/* el borde verde de la que seleccionas, le puse tambien el :hover porque si no al pasarle el mouse se ponia naranja otra vez */
+.activa,
+.activa:hover {
+  border-color: #2e8b3a;
+  box-shadow: 0px 0px 0px 2px #2e8b3a;
+}
+
+.foto {
+  height: 240px;
+  background-color: #e9e1d2;
+  overflow: hidden;
+}
+
+/* el object-fit cover hace que la imagen llene el cuadro sin estirarse, le corta lo que sobra */
+/* el transition es pa que el zoom de abajo se haga despacito y no de golpe */
+.foto img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: all 0.6s;
+}
+
+/* cuando le pasas el mouse a la tarjeta la foto se hace tantito mas grande, el scale(1.06) es 6% mas grande */
+/* como .foto tiene overflow hidden lo que crece no se sale de la tarjeta */
+.visible:hover .foto img {
+  transform: scale(1.06);
+}
+
+.info {
+  padding-top: 36px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+}
+
+.nombre {
+  font-family: Anton, Impact, sans-serif;
+  font-weight: normal;
+  font-size: 34px;
+  letter-spacing: 1px;
+}
+
+.lema {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #e07b00;
+}
+
+/* le puse un alto minimo al texto pa que la rayita de abajo quede pareja en todas las tarjetas */
+.texto {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #5b5a52;
+  min-height: 270px;
+}
+
+.datos {
+  overflow: hidden;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd4c3;
+}
+
+.datos div {
+  float: left;
+}
+
+/* como dice .datos .derecha le gana al de arriba y este si se va a la derecha */
+.datos .derecha {
+  float: right;
+  text-align: right;
+}
+
+.valor {
+  font-size: 15px;
+  color: #2e8b3a;
+}
+
+.etiqueta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #8c897e;
+}
+
+/* el textito de "ver ficha completa", con position relative pa poder moverlo con left */
+.ver-mas {
+  margin-top: 20px;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #2e8b3a;
+  position: relative;
+  left: 0px;
+  transition: all 0.4s;
+}
+
+/* cuando pasas el mouse por la tarjeta la flechita se recorre a la derecha, como diciendo "picale" */
+.visible:hover .ver-mas {
+  left: 6px;
+  color: #e07b00;
+}
+
+/* ---------- las fichas ---------- */
+
+#fichas {
+  margin-top: 48px;
+}
+
+/* el mensajito que sale cuando no has escogido a nadie, con borde de rayitas (dashed) */
+.pista {
+  padding: 24px;
+  border: 2px dashed #ddd4c3;
+  border-radius: 16px;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  color: #8c897e;
+}
+
+/* las fichas empiezan escondidas con display none, el js les pone display block a la que toca */
+/* la animacion entrar se vuelve a correr cada vez que una ficha aparece, por eso sale suavecito */
+.ficha {
+  display: none;
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-left: 4px solid #2e8b3a;
+  border-radius: 16px;
+  padding: 32px;
+  animation: entrar 0.5s;
+}
+
+.ficha-nombre {
+  font-family: Anton, Impact, sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+/* la lista de datos, el margin-left es pa que se vean los puntitos de la lista */
+.lista {
+  margin-left: 20px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #5b5a52;
+}
+
+.lista b {
+  color: #1c1e1a;
+}
+
+/* ---------- personajes secundarios ---------- */
+
+/* esta seccion empieza igual que las tarjetas: invisible y mas abajito, el js le pone la clase mostrar */
+.secundarios {
+  margin-top: 96px;
+  position: relative;
+  top: 24px;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.mostrar {
+  opacity: 1;
+  top: 0px;
+}
+
+.subtitulo {
+  font-family: Anton, Impact, sans-serif;
+  font-weight: normal;
+  font-size: 56px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  color: #e07b00;
+}
+
+.chicos {
+  overflow: hidden;
+}
+
+/* las cajitas chiquitas, la misma cuenta de 23% y 2.66% que las tarjetas grandes */
+.chico {
+  float: left;
+  width: 23%;
+  margin-right: 2.66%;
+  margin-bottom: 24px;
+  min-height: 210px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-radius: 16px;
+  position: relative;
+  top: 0px;
+  transition: all 0.4s;
+}
+
+.ultimo {
+  margin-right: 0px;
+}
+
+.chico:hover {
+  top: -4px;
+  border-color: #e07b00;
+}
+
+/* el circulito con la letra, el border-radius 50% es lo que lo hace redondo */
+/* y el line-height igual que el alto es un truquito pa que la letra quede centrada de arriba a abajo */
+.inicial {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #f1d5aa;
+  color: #e07b00;
+  font-family: Anton, Impact, sans-serif;
+  font-size: 22px;
+  text-align: center;
+  line-height: 44px;
+}
+
+.chico-nombre {
+  margin-top: 16px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.chico-texto {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5b5a52;
+}
+
+.pie {
+  margin-top: 64px;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #8c897e;
+}
+
+/* ---------- boton pa subir ---------- */
+
+/* position fixed hace que el boton se quede pegado en la esquina aunque bajes la pagina */
+/* empieza invisible (opacity 0 y visibility hidden) y el js lo enseña cuando ya bajaste */
+#subir {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background-color: #2e8b3a;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0px 8px 20px #c9c1b0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+#subir:hover {
+  background-color: #e07b00;
+}
+
+/* esto nomas jala cuando la pantalla es de menos de 400px (osea en el cel),
+le quito los float pa que todo quede uno abajo del otro */
+@media (max-width: 400px) {
+  .contenedor {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  #izquierda {
+    float: none;
+    width: 100%;
+  }
+  #derecha {
+    float: none;
+    margin-top: 32px;
+  }
+  .titulo {
+    font-size: 44px;
+  }
+  .numero {
+    margin-right: 24px;
+  }
+  .cifra {
+    font-size: 34px;
+  }
+  .tarjeta {
+    float: none;
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .texto {
+    min-height: 0px;
+  }
+  .ficha {
+    padding: 24px;
+  }
+  .ficha-nombre {
+    font-size: 30px;
+  }
+  .subtitulo {
+    font-size: 36px;
+  }
+  .chico {
+    float: none;
+    width: 100%;
+    margin-right: 0px;
+    min-height: 0px;
+  }
+}
