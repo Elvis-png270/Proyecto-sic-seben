@@ -48,6 +48,12 @@
         <!-- este cuadrito cambia cuando le picas a una estacion, el js le cambia el texto -->
         <p class="pista" id="radio">📻 Pícale a una estación pa sintonizarla</p>
 
+        <!-- aqui sale el video de youtube con la estacion completa, empieza escondido hasta que sintonizas una -->
+        <!-- el allow autoplay es pa que youtube deje que empiece a sonar solito -->
+        <div id="reproductor">
+          <iframe id="youtube" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
         <!-- reuse las cajitas de los personajes secundarios (chico) pa no hacer otro estilo -->
         <!-- le mando el numero y el nombre a la funcion pa que sepa cual prender -->
         <div class="chicos estaciones">
@@ -140,6 +146,9 @@
 
       <p class="pie">Proyecto escolar · GTA V y su música son de Rockstar Games</p>
     </div>
+
+    <!-- el ruidito de estatica de cuando cambias de estacion, no se ve porque no tiene controls -->
+    <audio id="estatica" src="audios/estatica.wav"></audio>
 
     <!-- este js es aparte del script.js porque ese busca las tarjetas de personajes y aqui no hay -->
     <script src="soundtrack.js"></script>

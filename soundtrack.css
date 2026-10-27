@@ -469,6 +469,25 @@ body {
   to { height: 16px; }
 }
 
+/* la cajita del video de youtube, empieza escondida y el js la enseña cuando sintonizas */
+#reproductor {
+  display: none;
+  margin-bottom: 32px;
+  animation: entrar 0.5s;
+  position: relative;
+}
+
+/* el iframe es como una ventanita que mete otra pagina adentro de la tuya, en este caso youtube */
+/* 480 x 270 es la medida de los videos (16:9) pero en chiquito */
+#youtube {
+  display: block;
+  width: 480px;
+  height: 270px;
+  border: none;
+  border-radius: 16px;
+  background-color: #1c1e1a;
+}
+
 /* las estaciones tienen manita porque se les puede picar */
 .estaciones .chico {
   cursor: pointer;
@@ -570,5 +589,10 @@ le quito los float pa que todo quede uno abajo del otro */
   }
   .chico-texto {
     min-height: 0px;
+  }
+  /* en el cel no caben 480px entonces el video agarra todo lo ancho */
+  #youtube {
+    width: 100%;
+    height: 190px;
   }
 }
