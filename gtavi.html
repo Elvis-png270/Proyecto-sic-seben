@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA VI · Cuenta regresiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <!-- esta pagina tiene su propio css como las demas -->
+    <link rel="stylesheet" href="gtavi.css">
+  </head>
+
+  <!-- el onload es pa que la cuenta empiece en cuanto carga la pagina -->
+  <body onload="iniciar()">
+    <div class="contenedor">
+
+      <!-- el mismo menu de siempre pero aqui la actual es gta vi -->
+      <div class="menu">
+        <a href="index.html">Personajes</a>
+        <a href="soundtrack.html">Soundtrack</a>
+        <a href="historia.html">Historia</a>
+        <a href="gtavi.html" class="actual">GTA VI</a>
+      </div>
+
+      <div id="arriba">
+        <div id="izquierda">
+          <p class="eyebrow">LO QUE SIGUE · GRAND THEFT AUTO VI</p>
+          <h1 class="titulo">Ya casi llega GTA VI.</h1>
+          <p class="intro">Después de más de diez años desde GTA V, Rockstar por fin saca la siguiente entrega. Esta vez la historia regresa a Vice City, en el estado de Leonida, y por primera vez en la saga hay una pareja de protagonistas: Lucia y Jason.</p>
+
+          <!-- la cuenta regresiva, cada numero tiene su id pa que el js lo pueda cambiar cada segundo -->
+          <div class="cuenta" id="cuenta">
+            <div class="caja">
+              <p class="cifra" id="dias">00</p>
+              <p class="etiqueta">DÍAS</p>
+            </div>
+            <div class="caja">
+              <p class="cifra" id="horas">00</p>
+              <p class="etiqueta">HORAS</p>
+            </div>
+            <div class="caja">
+              <p class="cifra" id="minutos">00</p>
+              <p class="etiqueta">MINUTOS</p>
+            </div>
+            <div class="caja ultima">
+              <p class="cifra" id="segundos">00</p>
+              <p class="etiqueta">SEGUNDOS</p>
+            </div>
+          </div>
+
+          <!-- el link pa comprarlo en la tienda de rockstar, el target _blank lo abre en otra pestaña -->
+          <a class="comprar" href="https://store.rockstargames.com/game/buy-gta-vi" target="_blank">Compra GTA VI aquí →</a>
+          <p class="nota">Sale el 19 de noviembre de 2026 · Te lleva a la tienda oficial de Rockstar</p>
+        </div>
+
+        <div id="derecha">
+          <img id="portada" src="https://static.wikia.nocookie.net/gtawiki/images/2/25/GTAVI-CoverArt.jpg/revision/latest/scale-to-width-down/600?cb=20260618132434" alt="Portada de GTA VI" referrerpolicy="no-referrer">
+        </div>
+      </div>
+
+      <!-- los datos importantes en una ficha con lista como en las otras paginas -->
+      <div class="seccion">
+        <p class="eyebrow">LO QUE SABEMOS</p>
+        <h2 class="subtitulo">Datos del juego</h2>
+
+        <div class="ficha">
+          <ul class="lista">
+            <li><b>Fecha de salida:</b> 19 de noviembre de 2026.</li>
+            <li><b>Consolas:</b> PlayStation 5 y Xbox Series X|S. Para PC todavía no hay fecha.</li>
+            <li><b>Precio:</b> 79.99 dólares la edición normal.</li>
+            <li><b>Dónde pasa:</b> en Vice City y el resto de Leonida, que está inspirado en Florida.</li>
+            <li><b>Preventa:</b> empezó el 25 de junio de 2026 y si lo compras digital lo puedes descargar desde el 12 de noviembre.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- los dos protagonistas, reuse las cajitas chico de los personajes -->
+      <div class="seccion">
+        <p class="eyebrow">LOS NUEVOS</p>
+        <h2 class="subtitulo">Los protagonistas</h2>
+
+        <div class="chicos">
+          <div class="chico">
+            <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/2/2a/LuciaCaminos-GTAVI-Portrait.png/revision/latest/scale-to-width-down/600?cb=20250506145927" alt="Lucia Caminos" referrerpolicy="no-referrer">
+            <div class="chico-info">
+              <p class="chico-nombre">Lucia Caminos</p>
+              <p class="chico-texto">La primera protagonista mujer de los GTA modernos. Acaba de salir de la cárcel y quiere una vida mejor.</p>
+            </div>
+          </div>
+          <div class="chico ultimo">
+            <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/d/de/JasonDuval-GTAVI-Portrait.png/revision/latest/scale-to-width-down/600?cb=20250506145706" alt="Jason Duval" referrerpolicy="no-referrer">
+            <div class="chico-info">
+              <p class="chico-nombre">Jason Duval</p>
+              <p class="chico-texto">La pareja de Lucia. Creció entre estafadores y ahora junto con ella se meten en algo mucho más grande.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="pie">Proyecto escolar · GTA VI es de Rockstar Games</p>
+    </div>
+
+    <script src="gtavi.js"></script>
+  </body>
+</html>
