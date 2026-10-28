@@ -488,6 +488,83 @@ body {
   background-color: #1c1e1a;
 }
 
+/* ---------- mi top de canciones ---------- */
+
+/* cada puesto es una cajita blanca, el overflow hidden es pa que los float de adentro no la aplasten */
+.puesto {
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-radius: 16px;
+  position: relative;
+  top: 0px;
+  transition: all 0.4s;
+}
+
+.puesto:hover {
+  top: -4px;
+  border-color: #e07b00;
+  box-shadow: 0px 12px 30px #f1d5aa;
+}
+
+/* el numero grandote del lugar, con float pa que quede a la izquierda */
+.lugar {
+  float: left;
+  width: 80px;
+  font-family: Anton, Impact, sans-serif;
+  font-size: 72px;
+  line-height: 1;
+  color: #e07b00;
+}
+
+/* las imagenes van en su propia cajita a un lado del numero, si hay empate salen 2 */
+.puesto-fotos {
+  float: left;
+  margin-right: 32px;
+}
+
+/* las miniaturas de youtube son de 16:9 entonces 240 x 135 quedan sin aplastarse */
+.miniatura {
+  display: block;
+  width: 240px;
+  height: 135px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: #e9e1d2;
+}
+
+/* el texto ocupa lo que sobra, el overflow hidden hace que no se meta abajo de las fotos */
+.puesto-info {
+  overflow: hidden;
+}
+
+/* la segunda cancion del empate con mas espacio arriba pa que se vea separada */
+.empate {
+  margin-top: 24px;
+}
+
+/* el link al video como botoncito naranja, igual que en la pagina de la historia */
+.cancion {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border: 1px solid #e07b00;
+  border-radius: 20px;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: #e07b00;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cancion:hover {
+  background-color: #e07b00;
+  color: #ffffff;
+}
+
 /* las estaciones tienen manita porque se les puede picar */
 .estaciones .chico {
   cursor: pointer;
@@ -589,6 +666,21 @@ le quito los float pa que todo quede uno abajo del otro */
   }
   .chico-texto {
     min-height: 0px;
+  }
+  /* en el top quito los float pa que el numero, las fotos y el texto queden uno abajo del otro */
+  .lugar {
+    float: none;
+    font-size: 56px;
+    margin-bottom: 12px;
+  }
+  .puesto-fotos {
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 12px;
+  }
+  .miniatura {
+    width: 100%;
+    height: 160px;
   }
   /* en el cel no caben 480px entonces el video agarra todo lo ancho */
   #youtube {
