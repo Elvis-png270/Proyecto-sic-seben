@@ -82,7 +82,7 @@ body {
 }
 
 .titulo {
-  font-family: Anton, Impact, sans-serif;
+  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
   font-weight: normal;
   font-size: 72px;
   margin-top: 28px;
@@ -126,7 +126,7 @@ body {
 }
 
 .subtitulo {
-  font-family: Anton, Impact, sans-serif;
+  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
   font-weight: normal;
   font-size: 48px;
   margin-top: 12px;
@@ -145,7 +145,7 @@ body {
 }
 
 .ficha-nombre {
-  font-family: Anton, Impact, sans-serif;
+  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
   font-weight: normal;
   font-size: 32px;
   margin-top: 8px;
