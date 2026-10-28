@@ -160,6 +160,7 @@ body {
   margin-top: 32px;
   padding: 16px 32px;
   border-radius: 30px;
+  border: 2px solid #2e8b3a;
   background-color: #2e8b3a;
   color: #ffffff;
   font-size: 18px;
@@ -170,7 +171,19 @@ body {
 
 .comprar:hover {
   background-color: #e07b00;
+  border-color: #e07b00;
   box-shadow: 0px 12px 30px #f1d5aa;
+}
+
+/* el de xbox va al lado, blanco con borde pa que no se vean dos botones verdes iguales */
+.xbox {
+  margin-left: 12px;
+  background-color: #ffffff;
+  color: #2e8b3a;
+}
+
+.xbox:hover {
+  color: #ffffff;
 }
 
 .nota {
@@ -312,6 +325,15 @@ body {
   }
   .subtitulo {
     font-size: 36px;
+  }
+  /* en el cel los botones no caben juntos entonces van uno abajo del otro */
+  .comprar {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+  }
+  .xbox {
+    margin-left: 0px;
   }
   .ficha {
     padding: 24px;

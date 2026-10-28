@@ -541,6 +541,17 @@ body {
   overflow: hidden;
 }
 
+/* la cajita del tema principal va separada del texto de arriba y con la raya verde como las fichas */
+.tema {
+  margin-top: 32px;
+  border-left: 4px solid #2e8b3a;
+}
+
+/* el min-height de las estaciones aqui no hace falta */
+.tema .chico-texto {
+  min-height: 0px;
+}
+
 /* la segunda cancion del empate con mas espacio arriba pa que se vea separada */
 .empate {
   margin-top: 24px;
