@@ -203,6 +203,93 @@ body {
   margin-top: 80px;
 }
 
+/* la imagen del trailer, la miniatura es de 16:9 entonces 720 x 405 queda sin aplastarse */
+/* el display block es pa que el boton quede abajo y no al lado */
+.trailer {
+  display: block;
+  width: 720px;
+  height: 405px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #ddd4c3;
+  transition: all 0.4s;
+}
+
+/* cuando le pasas el mouse se sube tantito con borde naranja como las cajitas */
+.trailer:hover {
+  transform: translateY(-4px);
+  border-color: #e07b00;
+  box-shadow: 0px 16px 40px #f1d5aa;
+}
+
+/* la cajita de la cancion del trailer, igual que las del top del soundtrack */
+/* el overflow hidden es pa que la imagen con float no se salga de la cajita */
+.cancion-trailer {
+  overflow: hidden;
+  max-width: 720px;
+  margin-top: 32px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-left: 4px solid #2e8b3a;
+  border-radius: 16px;
+}
+
+/* la miniatura del video a la izquierda con float */
+.miniatura {
+  float: left;
+  width: 240px;
+  height: 135px;
+  margin-right: 24px;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: #e9e1d2;
+}
+
+/* el overflow hidden hace que el texto no se meta abajo de la imagen */
+.cancion-info {
+  overflow: hidden;
+}
+
+.cancion-nombre {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cancion-artista {
+  margin-top: 2px;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #e07b00;
+}
+
+.cancion-texto {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5b5a52;
+}
+
+/* el link como botoncito naranja como en las otras paginas */
+.escuchar {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border: 1px solid #e07b00;
+  border-radius: 20px;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: #e07b00;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.escuchar:hover {
+  background-color: #e07b00;
+  color: #ffffff;
+}
+
 .subtitulo {
   font-family: "Pricedown Bl", Anton, Impact, sans-serif;
   font-weight: normal;
@@ -332,6 +419,19 @@ body {
   }
   .subtitulo {
     font-size: 36px;
+  }
+  /* en el cel la imagen del trailer agarra todo lo ancho */
+  .trailer {
+    width: 100%;
+    height: 190px;
+  }
+  /* en el cel la miniatura de la cancion va arriba y el texto abajo */
+  .miniatura {
+    float: none;
+    width: 100%;
+    height: 160px;
+    margin-right: 0px;
+    margin-bottom: 16px;
   }
   /* en el cel los botones no caben juntos entonces van uno abajo del otro */
   .comprar {
