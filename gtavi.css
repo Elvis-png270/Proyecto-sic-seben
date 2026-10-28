@@ -103,7 +103,11 @@ body {
   font-size: 88px;
   margin-top: 28px;
   margin-bottom: 32px;
-  color: #e07b00;
+  /* blanco con contorno negro como el logo de gta v, el contorno son 8 sombras de 3px (una pa cada lado) */
+  /* y la ultima sombra naranja va mas lejos pa que se vea como sombra de verdad */
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
 }
 
 .intro {
@@ -205,7 +209,10 @@ body {
   font-size: 56px;
   margin-top: 12px;
   margin-bottom: 24px;
+  /* lo mismo que el titulo pero naranja, con contorno mas delgadito y la sombra negra */
   color: #e07b00;
+  letter-spacing: 1px;
+  text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
 
 .ficha {
