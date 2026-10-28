@@ -1,0 +1,291 @@
+/* el css del quiz, los mismos colores y letras que las otras paginas pa que todo combine */
+
+/* el * agarra TODO, es pa quitarle los margenes que pone el navegador */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5efe3;
+  color: #1c1e1a;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* angosto como el de historia porque son puras preguntas una abajo de otra */
+.contenedor {
+  width: 90%;
+  max-width: 900px;
+  margin: 0px auto;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+/* ---------- menu ---------- */
+
+.menu {
+  margin-bottom: 56px;
+}
+
+.menu a {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 8px 18px;
+  border: 1px solid #ddd4c3;
+  border-radius: 20px;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #5b5a52;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.menu a:hover {
+  border-color: #e07b00;
+  color: #e07b00;
+}
+
+.menu .actual,
+.menu .actual:hover {
+  background-color: #2e8b3a;
+  border-color: #2e8b3a;
+  color: #ffffff;
+}
+
+/* ---------- encabezado ---------- */
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    top: 20px;
+  }
+  to {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+.encabezado {
+  position: relative;
+  animation: entrar 0.8s;
+}
+
+.eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #2e8b3a;
+}
+
+.titulo {
+  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
+  font-weight: normal;
+  font-size: 80px;
+  margin-top: 28px;
+  margin-bottom: 32px;
+  /* blanco con contorno negro como el logo de gta v, el contorno son 8 sombras de 3px (una pa cada lado) */
+  /* y la ultima sombra naranja va mas lejos pa que se vea como sombra de verdad */
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #5b5a52;
+}
+
+/* ---------- el nombre ---------- */
+
+.campo {
+  margin-top: 32px;
+}
+
+/* el label con display block pa que quede arriba de la cajita y no al lado */
+.etiqueta-nombre {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  color: #2e8b3a;
+  cursor: pointer;
+}
+
+/* la cajita de escribir, igual que las opciones pero blanca */
+.caja-nombre {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 20px;
+  background-color: #ffffff;
+  border: 2px solid #ddd4c3;
+  border-radius: 12px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  color: #1c1e1a;
+  transition: all 0.3s;
+}
+
+/* el :focus es cuando le picaste y estas escribiendo adentro */
+/* el outline none le quita la raya azul que pone el navegador */
+.caja-nombre:focus {
+  outline: none;
+  border-color: #e07b00;
+}
+
+/* el contador de cuantas llevas, como botoncito verde de rayitas */
+.contador {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 8px 18px;
+  border: 2px dashed #2e8b3a;
+  border-radius: 20px;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #2e8b3a;
+}
+
+/* ---------- las preguntas ---------- */
+
+.seccion {
+  margin-top: 56px;
+}
+
+/* cada pregunta es una cajita blanca con la raya verde como las fichas */
+.pregunta {
+  margin-bottom: 20px;
+  padding: 28px 32px;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-left: 4px solid #2e8b3a;
+  border-radius: 16px;
+}
+
+.pregunta-texto {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* las opciones, los botones traen su propio estilo feo del navegador entonces se lo cambio todo */
+/* el display block hace que cada una agarre todo el renglon y queden una abajo de otra */
+.opcion {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 14px 20px;
+  text-align: left;
+  background-color: #f5efe3;
+  border: 2px solid #ddd4c3;
+  border-radius: 12px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  color: #1c1e1a;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.opcion:hover {
+  border-color: #e07b00;
+  color: #e07b00;
+}
+
+/* el js le pone la clase bien o mal segun si le atinaste */
+/* les puse el :hover tambien porque si no al pasarle el mouse se ponian naranjas otra vez */
+.bien,
+.bien:hover {
+  background-color: #2e8b3a;
+  border-color: #2e8b3a;
+  color: #ffffff;
+}
+
+.mal,
+.mal:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  color: #ffffff;
+}
+
+/* ---------- resultado ---------- */
+
+/* empieza escondido y el js le pone display block cuando acabas */
+.resultado {
+  display: none;
+  margin-top: 40px;
+  padding: 40px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 2px solid #e07b00;
+  border-radius: 16px;
+  box-shadow: 0px 16px 40px #f1d5aa;
+  animation: entrar 0.6s;
+  position: relative;
+}
+
+/* la calificacion grandota con el mismo estilo de los titulos */
+.calificacion {
+  margin-top: 12px;
+  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
+  font-size: 96px;
+  color: #e07b00;
+  text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
+}
+
+.mensaje {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #5b5a52;
+}
+
+/* el boton de volver a intentar, verde como el de comprar */
+.otra-vez {
+  margin-top: 24px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background-color: #2e8b3a;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.otra-vez:hover {
+  background-color: #e07b00;
+}
+
+.pie {
+  margin-top: 64px;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: #8c897e;
+}
+
+/* en el cel achico las letras y los espacios */
+@media (max-width: 400px) {
+  .contenedor {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .titulo {
+    font-size: 44px;
+  }
+  .pregunta {
+    padding: 20px;
+  }
+  .pregunta-texto {
+    font-size: 17px;
+  }
+  .resultado {
+    padding: 28px 20px;
+  }
+  .calificacion {
+    font-size: 64px;
+  }
+}

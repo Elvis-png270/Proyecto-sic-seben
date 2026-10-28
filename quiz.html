@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA V · Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <!-- la letra del logo de gta (pricedown), no esta en google fonts entonces la saco de cdnfonts -->
+    <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
+    <!-- esta pagina tiene su propio css como las demas -->
+    <link rel="stylesheet" href="quiz.css">
+  </head>
+
+  <body>
+    <div class="contenedor">
+
+      <!-- el mismo menu de siempre pero aqui la actual es quiz -->
+      <div class="menu">
+        <a href="index.html">Personajes</a>
+        <a href="soundtrack.html">Soundtrack</a>
+        <a href="historia.html">Historia</a>
+        <a href="gtavi.html">GTA VI</a>
+        <a href="quiz.html" class="actual">Quiz</a>
+        <a href="nosotros.html">Nosotros</a>
+      </div>
+
+      <div class="encabezado">
+        <p class="eyebrow">GRAND THEFT AUTO V · EL QUIZ</p>
+        <h1 class="titulo">¿Qué tanto sabes?</h1>
+        <p class="intro">Son 8 preguntas sobre el juego. Pícale a la respuesta que creas que es la buena: si le atinas se pone verde y si no se pone roja y te enseña la correcta. Todas las respuestas vienen en las otras páginas, así que no hay excusa xd</p>
+        <!-- el label es el texto que va pegado a una cajita de escribir (input) -->
+        <!-- el for del label tiene que ser igual al id del input, asi si le picas al texto se activa la cajita -->
+        <!-- el placeholder es el texto gris que sale adentro cuando esta vacia -->
+        <div class="campo">
+          <label for="nombre" class="etiqueta-nombre">¿Cómo te llamas?</label>
+          <input type="text" id="nombre" class="caja-nombre" placeholder="Escribe tu nombre aquí">
+        </div>
+
+        <!-- este texto lo cambia el js cada que contestas una -->
+        <p class="contador" id="contador">Llevas 0 de 8 preguntas</p>
+      </div>
+
+      <!-- cada pregunta es una cajita blanca con 3 botones -->
+      <!-- el id de cada boton es p + numero de pregunta + letra (p1a, p1b...) pa que el js lo pueda pintar -->
+      <!-- en el onclick le mando al js el numero de la pregunta y la letra que escogiste -->
+      <div class="seccion">
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 1</p>
+          <h3 class="pregunta-texto">¿Cómo se llama la ciudad donde pasa GTA V?</h3>
+          <button class="opcion" id="p1a" onclick="responder(1, 'a')">Vice City</button>
+          <button class="opcion" id="p1b" onclick="responder(1, 'b')">Los Santos</button>
+          <button class="opcion" id="p1c" onclick="responder(1, 'c')">Liberty City</button>
+        </div>
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 2</p>
+          <h3 class="pregunta-texto">¿Cuál de los protagonistas vive en Sandy Shores?</h3>
+          <button class="opcion" id="p2a" onclick="responder(2, 'a')">Michael</button>
+          <button class="opcion" id="p2b" onclick="responder(2, 'b')">Franklin</button>
+          <button class="opcion" id="p2c" onclick="responder(2, 'c')">Trevor</button>
+        </div>
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 3</p>
+          <h3 class="pregunta-texto">¿Cómo se llama el rottweiler que termina cuidando Franklin?</h3>
+          <button class="opcion" id="p3a" onclick="responder(3, 'a')">Chop</button>
+          <button class="opcion" id="p3b" onclick="responder(3, 'b')">Max</button>
+          <button class="opcion" id="p3c" onclick="responder(3, 'c')">Rocky</button>
+        </div>
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 4</p>
+          <h3 class="pregunta-texto">¿En qué año pasa el prólogo en North Yankton?</h3>
+          <button class="opcion" id="p4a" onclick="responder(4, 'a')">2004</button>
+          <button class="opcion" id="p4b" onclick="responder(4, 'b')">2013</button>
+          <button class="opcion" id="p4c" onclick="responder(4, 'c')">1999</button>
+        </div>
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 5</p>
+          <h3 class="pregunta-texto">¿Qué estación de radio conduce Kenny Loggins?</h3>
+          <button class="opcion" id="p5a" onclick="responder(5, 'a')">Non-Stop-Pop FM</button>
+          <button class="opcion" id="p5b" onclick="responder(5, 'b')">Los Santos Rock Radio</button>
+          <button class="opcion" id="p5c" onclick="responder(5, 'c')">Channel X</button>
+        </div>
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 6</p>
+          <h3 class="pregunta-texto">¿Cuántos finales distintos tiene el juego?</h3>
+          <button class="opcion" id="p6a" onclick="responder(6, 'a')">Uno</button>
+          <button class="opcion" id="p6b" onclick="responder(6, 'b')">Dos</button>
+          <button class="opcion" id="p6c" onclick="responder(6, 'c')">Tres</button>
+        </div>
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 7</p>
+          <h3 class="pregunta-texto">¿Quién es el que planea los golpes?</h3>
+          <button class="opcion" id="p7a" onclick="responder(7, 'a')">Lester</button>
+          <button class="opcion" id="p7b" onclick="responder(7, 'b')">Lamar</button>
+          <button class="opcion" id="p7c" onclick="responder(7, 'c')">Dave Norton</button>
+        </div>
+
+        <div class="pregunta">
+          <p class="eyebrow">PREGUNTA 8</p>
+          <h3 class="pregunta-texto">¿Cómo se llama el tema principal que suena después del prólogo?</h3>
+          <button class="opcion" id="p8a" onclick="responder(8, 'a')">Sleepwalking</button>
+          <button class="opcion" id="p8b" onclick="responder(8, 'b')">Welcome to Los Santos</button>
+          <button class="opcion" id="p8c" onclick="responder(8, 'c')">The Setup</button>
+        </div>
+      </div>
+
+      <!-- el resultado empieza escondido y el js lo enseña cuando contestas las 8 -->
+      <div class="resultado" id="resultado">
+        <p class="eyebrow">TU RESULTADO</p>
+        <p class="calificacion" id="calificacion">0 / 8</p>
+        <p class="mensaje" id="mensaje"></p>
+        <!-- el location.reload() recarga la pagina, asi se borra todo y empiezas de nuevo -->
+        <button class="otra-vez" onclick="location.reload()">Volver a intentar</button>
+      </div>
+
+      <p class="pie">Proyecto escolar · GTA V es de Rockstar Games</p>
+    </div>
+
+    <script src="quiz.js"></script>
+  </body>
+</html>
