@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA V · La historia</title>
+    <!-- bootstrap pa la rejilla, font awesome pa los iconos y aos pa las animaciones al bajar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
     <!-- la letra del logo de gta (pricedown), no esta en google fonts entonces la saco de cdnfonts -->
     <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
@@ -12,136 +16,155 @@
   </head>
 
   <body>
-    <div class="contenedor">
+    <div class="container contenedor">
 
       <!-- el mismo menu de las otras paginas pero aqui la actual es historia -->
-      <div class="menu">
-        <a href="index.html">Personajes</a>
-        <a href="soundtrack.html">Soundtrack</a>
-        <a href="historia.html" class="actual">Historia</a>
-        <a href="gtavi.html">GTA VI</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="nosotros.html">Nosotros</a>
-      </div>
+      <header>
+        <nav class="menu d-flex flex-wrap gap-2">
+          <a href="index.html"><i class="fa-solid fa-user-group"></i> Personajes</a>
+          <a href="soundtrack.html"><i class="fa-solid fa-radio"></i> Soundtrack</a>
+          <a href="historia.html" class="actual"><i class="fa-solid fa-book-open"></i> Historia</a>
+          <a href="gtavi.html"><i class="fa-solid fa-gamepad"></i> GTA VI</a>
+          <a href="quiz.html"><i class="fa-solid fa-circle-question"></i> Quiz</a>
+          <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+          <a href="nosotros.html"><i class="fa-solid fa-user"></i> Nosotros</a>
+        </nav>
+      </header>
 
-      <div class="encabezado">
-        <p class="eyebrow">GRAND THEFT AUTO V · LA HISTORIA</p>
-        <h1 class="titulo">Un golpe nunca es el último.</h1>
-        <p class="intro">La historia de GTA V empieza con un robo que sale mal y sigue nueve años después en Los Santos, cuando tres criminales que no se llevan nada bien tienen que trabajar juntos. Aquí te la cuento en orden y sin enredos.</p>
+      <main>
+        <section class="encabezado">
+          <p class="eyebrow">GRAND THEFT AUTO V · LA HISTORIA</p>
+          <h1 class="titulo">Un golpe nunca es el último.</h1>
+          <p class="intro">La historia de GTA V empieza con un robo que sale mal y sigue nueve años después en Los Santos, cuando tres criminales que no se llevan nada bien tienen que trabajar juntos. Aquí te la cuento en orden y sin enredos.</p>
 
-        <div class="numeros">
-          <div class="numero">
-            <p class="cifra">2004</p>
-            <p class="etiqueta">AÑO DEL PRÓLOGO</p>
-          </div>
-          <div class="numero">
-            <p class="cifra">2013</p>
-            <p class="etiqueta">AÑO EN QUE PASA EL JUEGO</p>
-          </div>
-          <div class="numero">
-            <p class="cifra">3</p>
-            <p class="etiqueta">FINALES DISTINTOS</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- la historia por partes, cada ficha es un capitulo -->
-      <div class="seccion">
-        <p class="eyebrow">PASO A PASO</p>
-        <h2 class="subtitulo">Lo que pasa en el juego</h2>
-
-        <div class="ficha">
-          <p class="eyebrow">PRÓLOGO · NORTH YANKTON</p>
-          <h3 class="ficha-nombre">El robo que salió mal</h3>
-          <p class="texto">En 2004 Michael, Trevor y Brad asaltan un banco en Ludendorff, un pueblo nevado. Todo se tuerce: Brad cae, Trevor logra escapar y a Michael lo dan por muerto. Lo que nadie sabe es que Michael había hecho un trato a escondidas con Dave Norton, un agente del FIB.</p>
-        </div>
-
-        <div class="ficha">
-          <p class="eyebrow">CAPÍTULO 1 · LOS SANTOS</p>
-          <h3 class="ficha-nombre">Nueve años después</h3>
-          <p class="texto">Michael vive en una mansión de Rockford Hills con otro nombre y su familia, pero está aburrido de su vida. Conoce a Franklin, un chavo de South Los Santos que quiere dejar los trabajitos chicos, cuando este intenta llevarse el carro de su hijo.</p>
-        </div>
-
-        <div class="ficha">
-          <p class="eyebrow">CAPÍTULO 2 · LA DEUDA</p>
-          <h3 class="ficha-nombre">De regreso a los golpes</h3>
-          <p class="texto">Michael tumba una casa en las colinas que resulta ser de Martín Madrazo, un narco que le exige que le pague. Para juntar el dinero le habla a su viejo amigo Lester y arman con Franklin el robo a la joyería Vangelico.</p>
-        </div>
-
-        <div class="ficha">
-          <p class="eyebrow">CAPÍTULO 3 · SANDY SHORES</p>
-          <h3 class="ficha-nombre">Trevor se entera</h3>
-          <p class="texto">Trevor ve el robo en las noticias y reconoce una frase que solo Michael decía. Así descubre que su amigo sigue vivo, maneja hasta Los Santos y se le aparece en su casa. Desde ahí trabajan juntos, aunque no se tienen nada de confianza.</p>
-        </div>
-
-        <div class="ficha">
-          <p class="eyebrow">CAPÍTULO 4 · EL FIB</p>
-          <h3 class="ficha-nombre">Trabajando para los federales</h3>
-          <p class="texto">Los agentes Steve Haines y Dave Norton obligan a los tres a hacerles trabajos sucios. Mientras tanto Trevor descubre la verdad de lo que pasó en North Yankton y la amistad con Michael se rompe todavía más.</p>
-        </div>
-
-        <div class="ficha">
-          <p class="eyebrow">CAPÍTULO 5 · EL GOLPE GRANDE</p>
-          <h3 class="ficha-nombre">El robo del oro</h3>
-          <p class="texto">Al final los tres se juntan para su robo más grande: el oro del Union Depository, el banco más seguro de Los Santos. Les sale bien, pero ahora todos sus enemigos los quieren muertos.</p>
-        </div>
-      </div>
-
-      <!-- los golpes principales en una lista sencilla -->
-      <div class="seccion">
-        <p class="eyebrow">LOS ROBOS</p>
-        <h2 class="subtitulo">Los golpes principales</h2>
-
-        <div class="ficha">
-          <ul class="lista">
-            <li><b>La joyería Vangelico:</b> el primero, pa pagarle a Madrazo.</li>
-            <li><b>El puerto de Los Santos:</b> le roban algo a Merryweather, una empresa de seguridad.</li>
-            <li><b>El banco de Paleto Bay:</b> un banco de pueblo que termina en balacera con la policía.</li>
-            <li><b>El edificio del FIB:</b> se meten a borrar unos archivos.</li>
-            <li><b>El Union Depository:</b> el golpe final, puro oro.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- los 3 finales, reuse las cajitas chico con una imagen de cada final arriba -->
-      <div class="seccion">
-        <p class="eyebrow">TÚ DECIDES</p>
-        <h2 class="subtitulo">Los tres finales</h2>
-        <p class="intro">Al final del juego Franklin tiene que escoger qué hacer, y cada opción termina diferente. Cada final tiene su propia canción cuando salen los créditos, pícale pa escucharla.</p>
-
-        <!-- el target _blank es pa que el link se abra en otra pestaña y no te saque de la pagina -->
-        <div class="chicos">
-          <div class="chico">
-            <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/a/a4/SomethingSensible-GTAV-Thumbnail.jpg/revision/latest?cb=20140406142622" alt="Franklin apuntándole a Trevor" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Opción A</p>
-              <p class="lema">Matar a Trevor</p>
-              <p class="chico-texto">Se lo pide el FIB. Franklin y Michael siguen, pero su amistad ya no es la misma.</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=d4KOfBx_XPM" target="_blank">🎵 Don't Come Close · Yeasayer</a>
+          <div class="numeros d-flex flex-wrap gap-5">
+            <div class="numero">
+              <p class="cifra">2004</p>
+              <p class="etiqueta">AÑO DEL PRÓLOGO</p>
+            </div>
+            <div class="numero">
+              <p class="cifra">2013</p>
+              <p class="etiqueta">AÑO EN QUE PASA EL JUEGO</p>
+            </div>
+            <div class="numero">
+              <p class="cifra">3</p>
+              <p class="etiqueta">FINALES DISTINTOS</p>
             </div>
           </div>
-          <div class="chico">
-            <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/e/ee/GTA_V_mission_graphic_-_The_Time%27s_Come.jpg/revision/latest?cb=20131026161447" alt="Michael en la torre de la planta" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Opción B</p>
-              <p class="lema">Matar a Michael</p>
-              <p class="chico-texto">Se lo pide Devin Weston, un millonario. Franklin queda solo y Trevor no le vuelve a hablar.</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=rprf7LEraU4" target="_blank">🎵 Sleepwalking · The Chain Gang of 1974</a>
-            </div>
-          </div>
-          <div class="chico ultimo">
-            <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/d/db/TheThirdWay-GTAV-Thumbnail.jpg/revision/latest?cb=20150724121158" alt="Michael, Franklin y Trevor juntos" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Opción C</p>
-              <p class="lema">Salvar a los dos</p>
-              <p class="chico-texto">Los tres se unen contra todos sus enemigos. Es el final que casi todos consideran el bueno.</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=N3zf9q8mbWs" target="_blank">🎵 The Setup · Favored Nations</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <p class="pie">Proyecto escolar · GTA V y su historia son de Rockstar Games</p>
+        <!-- la historia por partes, cada ficha es un capitulo -->
+        <!-- cada capitulo es un article porque se entiende solito, y el data-aos hace que vayan saliendo al bajar -->
+        <section class="seccion">
+          <p class="eyebrow">PASO A PASO</p>
+          <h2 class="subtitulo">Lo que pasa en el juego</h2>
+
+          <article class="ficha" data-aos="fade-up">
+            <p class="eyebrow">PRÓLOGO · NORTH YANKTON</p>
+            <h3 class="ficha-nombre">El robo que salió mal</h3>
+            <p class="texto">En 2004 Michael, Trevor y Brad asaltan un banco en Ludendorff, un pueblo nevado. Todo se tuerce: Brad cae, Trevor logra escapar y a Michael lo dan por muerto. Lo que nadie sabe es que Michael había hecho un trato a escondidas con Dave Norton, un agente del FIB.</p>
+          </article>
+
+          <article class="ficha" data-aos="fade-up">
+            <p class="eyebrow">CAPÍTULO 1 · LOS SANTOS</p>
+            <h3 class="ficha-nombre">Nueve años después</h3>
+            <p class="texto">Michael vive en una mansión de Rockford Hills con otro nombre y su familia, pero está aburrido de su vida. Conoce a Franklin, un chavo de South Los Santos que quiere dejar los trabajitos chicos, cuando este intenta llevarse el carro de su hijo.</p>
+          </article>
+
+          <article class="ficha" data-aos="fade-up">
+            <p class="eyebrow">CAPÍTULO 2 · LA DEUDA</p>
+            <h3 class="ficha-nombre">De regreso a los golpes</h3>
+            <p class="texto">Michael tumba una casa en las colinas que resulta ser de Martín Madrazo, un narco que le exige que le pague. Para juntar el dinero le habla a su viejo amigo Lester y arman con Franklin el robo a la joyería Vangelico.</p>
+          </article>
+
+          <article class="ficha" data-aos="fade-up">
+            <p class="eyebrow">CAPÍTULO 3 · SANDY SHORES</p>
+            <h3 class="ficha-nombre">Trevor se entera</h3>
+            <p class="texto">Trevor ve el robo en las noticias y reconoce una frase que solo Michael decía. Así descubre que su amigo sigue vivo, maneja hasta Los Santos y se le aparece en su casa. Desde ahí trabajan juntos, aunque no se tienen nada de confianza.</p>
+          </article>
+
+          <article class="ficha" data-aos="fade-up">
+            <p class="eyebrow">CAPÍTULO 4 · EL FIB</p>
+            <h3 class="ficha-nombre">Trabajando para los federales</h3>
+            <p class="texto">Los agentes Steve Haines y Dave Norton obligan a los tres a hacerles trabajos sucios. Mientras tanto Trevor descubre la verdad de lo que pasó en North Yankton y la amistad con Michael se rompe todavía más.</p>
+          </article>
+
+          <article class="ficha" data-aos="fade-up">
+            <p class="eyebrow">CAPÍTULO 5 · EL GOLPE GRANDE</p>
+            <h3 class="ficha-nombre">El robo del oro</h3>
+            <p class="texto">Al final los tres se juntan para su robo más grande: el oro del Union Depository, el banco más seguro de Los Santos. Les sale bien, pero ahora todos sus enemigos los quieren muertos.</p>
+          </article>
+        </section>
+
+        <!-- los golpes principales en una lista sencilla -->
+        <section class="seccion" data-aos="fade-up">
+          <p class="eyebrow">LOS ROBOS</p>
+          <h2 class="subtitulo">Los golpes principales</h2>
+
+          <div class="ficha">
+            <ul class="lista">
+              <li><b>La joyería Vangelico:</b> el primero, pa pagarle a Madrazo.</li>
+              <li><b>El puerto de Los Santos:</b> le roban algo a Merryweather, una empresa de seguridad.</li>
+              <li><b>El banco de Paleto Bay:</b> un banco de pueblo que termina en balacera con la policía.</li>
+              <li><b>El edificio del FIB:</b> se meten a borrar unos archivos.</li>
+              <li><b>El Union Depository:</b> el golpe final, puro oro.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- los 3 finales, reuse las cajitas chico con una imagen de cada final arriba -->
+        <section class="seccion" data-aos="fade-up">
+          <p class="eyebrow">TÚ DECIDES</p>
+          <h2 class="subtitulo">Los tres finales</h2>
+          <p class="intro">Al final del juego Franklin tiene que escoger qué hacer, y cada opción termina diferente. Cada final tiene su propia canción cuando salen los créditos, pícale pa escucharla.</p>
+
+          <!-- 1 por fila en cel y 3 en fila desde tablet (col-md-4, porque 4 + 4 + 4 = 12) -->
+          <!-- el target _blank es pa que el link se abra en otra pestaña y no te saque de la pagina -->
+          <div class="chicos row g-4">
+            <div class="col-12 col-md-4">
+              <article class="chico">
+                <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/a/a4/SomethingSensible-GTAV-Thumbnail.jpg/revision/latest?cb=20140406142622" alt="Franklin apuntándole a Trevor" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Opción A</p>
+                  <p class="lema">Matar a Trevor</p>
+                  <p class="chico-texto">Se lo pide el FIB. Franklin y Michael siguen, pero su amistad ya no es la misma.</p>
+                  <a class="cancion" href="https://www.youtube.com/watch?v=d4KOfBx_XPM" target="_blank"><i class="fa-solid fa-music"></i> Don't Come Close · Yeasayer</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-4">
+              <article class="chico">
+                <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/e/ee/GTA_V_mission_graphic_-_The_Time%27s_Come.jpg/revision/latest?cb=20131026161447" alt="Michael en la torre de la planta" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Opción B</p>
+                  <p class="lema">Matar a Michael</p>
+                  <p class="chico-texto">Se lo pide Devin Weston, un millonario. Franklin queda solo y Trevor no le vuelve a hablar.</p>
+                  <a class="cancion" href="https://www.youtube.com/watch?v=rprf7LEraU4" target="_blank"><i class="fa-solid fa-music"></i> Sleepwalking · The Chain Gang of 1974</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-4">
+              <article class="chico">
+                <img class="chico-foto" src="https://static.wikia.nocookie.net/gtawiki/images/d/db/TheThirdWay-GTAV-Thumbnail.jpg/revision/latest?cb=20150724121158" alt="Michael, Franklin y Trevor juntos" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Opción C</p>
+                  <p class="lema">Salvar a los dos</p>
+                  <p class="chico-texto">Los tres se unen contra todos sus enemigos. Es el final que casi todos consideran el bueno.</p>
+                  <a class="cancion" href="https://www.youtube.com/watch?v=N3zf9q8mbWs" target="_blank"><i class="fa-solid fa-music"></i> The Setup · Favored Nations</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="pie">Proyecto escolar · GTA V y su historia son de Rockstar Games</footer>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- esto prende las animaciones de aos, el once true es pa que nomas salgan la primera vez -->
+    <script>
+      AOS.init({ once: true, duration: 700 })
+    </script>
   </body>
 </html>

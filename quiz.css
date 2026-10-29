@@ -7,17 +7,24 @@
   box-sizing: border-box;
 }
 
+/* bootstrap le pone margen abajo a los p, h1, h2, h3 y ul, aqui se lo quito pa que se vea como antes */
+h1, h2, h3, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* el line-height normal es porque bootstrap lo cambia y todo se veia mas separado */
 body {
   background-color: #f5efe3;
   color: #1c1e1a;
   font-family: Inter, Arial, sans-serif;
+  line-height: normal;
 }
 
 /* angosto como el de historia porque son puras preguntas una abajo de otra */
+/* el container de bootstrap ya lo centra */
 .contenedor {
-  width: 90%;
   max-width: 900px;
-  margin: 0px auto;
   padding-top: 96px;
   padding-bottom: 96px;
 }
@@ -28,10 +35,8 @@ body {
   margin-bottom: 56px;
 }
 
+/* el d-flex de bootstrap ya los pone en fila con espacio */
 .menu a {
-  display: inline-block;
-  margin-right: 8px;
-  margin-bottom: 8px;
   padding: 8px 18px;
   border: 1px solid #ddd4c3;
   border-radius: 20px;
@@ -145,6 +150,12 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 13px;
   color: #2e8b3a;
+}
+
+/* el del mejor puntaje en naranja pa que se distinga del contador */
+.mejor {
+  border-color: #e07b00;
+  color: #e07b00;
 }
 
 /* ---------- las preguntas ---------- */

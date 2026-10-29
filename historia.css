@@ -8,17 +8,24 @@
   box-sizing: border-box;
 }
 
+/* bootstrap le pone margen abajo a los p, h1, h2, h3 y ul, aqui se lo quito pa que se vea como antes */
+h1, h2, h3, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* el line-height normal es porque bootstrap lo cambia y todo se veia mas separado */
 body {
   background-color: #f5efe3;
   color: #1c1e1a;
   font-family: Inter, Arial, sans-serif;
+  line-height: normal;
 }
 
-/* aqui el ancho maximo es mas chico que en las otras porque es puro texto y si no queda muy largo pa leer */
+/* el container de bootstrap ya lo centra, aqui nomas le pongo un ancho maximo mas chico */
+/* porque es puro texto y si no queda muy largo pa leer */
 .contenedor {
-  width: 90%;
   max-width: 900px;
-  margin: 0px auto;
   padding-top: 96px;
   padding-bottom: 96px;
 }
@@ -29,10 +36,8 @@ body {
   margin-bottom: 56px;
 }
 
+/* el d-flex de bootstrap ya los pone en fila con espacio */
 .menu a {
-  display: inline-block;
-  margin-right: 8px;
-  margin-bottom: 8px;
   padding: 8px 18px;
   border: 1px solid #ddd4c3;
   border-radius: 20px;
@@ -100,15 +105,9 @@ body {
   color: #5b5a52;
 }
 
-/* los numeritos en fila con float, el overflow hidden es pa que la caja de afuera no se aplaste */
+/* los numeritos, el d-flex de bootstrap ya los pone en fila */
 .numeros {
-  overflow: hidden;
   margin-top: 32px;
-}
-
-.numero {
-  float: left;
-  margin-right: 48px;
 }
 
 .cifra {
@@ -180,16 +179,14 @@ body {
 /* ---------- los 3 finales ---------- */
 
 .chicos {
-  overflow: hidden;
-  margin-top: 32px;
+  margin-top: 8px;
 }
 
-/* aqui son 3 cajitas en vez de 4, la cuenta es 31% + 3.5% + 31% + 3.5% + 31% = 100 */
+/* las 3 cajitas, ya no llevan float ni la cuenta de porcentajes, eso ahora lo hacen los col-md-4 de bootstrap */
 /* el overflow hidden es pa que la imagen no se salga de las esquinas redondas */
+/* el height 100% es pa que las 3 midan igual */
 .chico {
-  float: left;
-  width: 31%;
-  margin-right: 3.5%;
+  height: 100%;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
   border-radius: 16px;
@@ -239,10 +236,6 @@ body {
   color: #ffffff;
 }
 
-.ultimo {
-  margin-right: 0px;
-}
-
 /* el mismo brinquito con borde naranja que en las otras paginas */
 .chico:hover {
   top: -4px;
@@ -262,13 +255,11 @@ body {
   color: #e07b00;
 }
 
-/* el min-height es pa que las 3 midan lo mismo aunque un texto sea mas cortito */
 .chico-texto {
   margin-top: 10px;
   font-size: 14px;
   line-height: 1.55;
   color: #5b5a52;
-  min-height: 88px;
 }
 
 .pie {
@@ -279,7 +270,7 @@ body {
   color: #8c897e;
 }
 
-/* en el cel quito los float pa que todo quede uno abajo del otro */
+/* en el cel achico letras y espacios, lo de ponerse uno abajo del otro ya lo hace bootstrap */
 @media (max-width: 400px) {
   .contenedor {
     padding-top: 40px;
@@ -287,9 +278,6 @@ body {
   }
   .titulo {
     font-size: 44px;
-  }
-  .numero {
-    margin-right: 24px;
   }
   .cifra {
     font-size: 34px;
@@ -302,15 +290,6 @@ body {
   }
   .ficha-nombre {
     font-size: 26px;
-  }
-  .chico {
-    float: none;
-    width: 100%;
-    margin-right: 0px;
-    margin-bottom: 16px;
-  }
-  .chico-texto {
-    min-height: 0px;
   }
   .chico-foto {
     height: 190px;

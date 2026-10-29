@@ -1,3 +1,5 @@
+/* el css del soundtrack, los colores y letras son los mismos que en personajes pa que se vean igualitas */
+
 /* el * agarra TODO TODO, es pa quitarle los margenes que el navegador pone porque se le da la gana */
 * {
   margin: 0px;
@@ -5,31 +7,33 @@
   box-sizing: border-box;
 }
 
+/* bootstrap le pone margen abajo a los p, h1, h2, h3 y ul, aqui se lo quito pa que se vea como antes */
+h1, h2, h3, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* el line-height normal es porque bootstrap lo cambia y todo se veia mas separado */
 body {
   background-color: #f5efe3;
   color: #1c1e1a;
   font-family: Inter, Arial, sans-serif;
+  line-height: normal;
 }
 
+/* el ancho ya lo pone el container de bootstrap, aqui nomas le doy espacio arriba y abajo */
 .contenedor {
-  width: 90%;
-  max-width: 1400px;
-  margin: 0px auto;
   padding-top: 96px;
   padding-bottom: 96px;
 }
 
-/* ---------- menu de arriba (sale en las dos paginas) ---------- */
+/* ---------- menu ---------- */
 
 .menu {
   margin-bottom: 56px;
 }
 
-/* los links del menu como botoncitos redondos, el display inline-block es pa que acepten padding y queden uno al lado del otro */
-/* el text-decoration none le quita la rayita de abajo que traen los links */
 .menu a {
-  display: inline-block;
-  margin-right: 8px;
   padding: 8px 18px;
   border: 1px solid #ddd4c3;
   border-radius: 20px;
@@ -53,22 +57,9 @@ body {
   color: #ffffff;
 }
 
-/* ---------- cosas de la pagina del soundtrack ---------- */
-
-/* el encabezado del soundtrack no tiene portada, nomas le pongo un ancho maximo pa que el texto no quede tan largo */
-.encabezado {
-  max-width: 900px;
-  position: relative;
-  animation: entrar 0.8s;
-}
-
-/* cada seccion del soundtrack, nomas es pa separarlas */
-.seccion {
-  margin-top: 80px;
-}
+/* ---------- encabezado ---------- */
 
 /* esta es la animacion de entrada, from es como empieza y to es como termina */
-/* empieza invisible y 20px mas abajo, y termina visible en su lugar */
 @keyframes entrar {
   from {
     opacity: 0;
@@ -80,31 +71,16 @@ body {
   }
 }
 
-/* el overflow hidden es pa que el div de arriba no se haga chiquito por culpa de los float, si no se lo pongo se encima todo alv */
-/* y le puse la animacion entrar pa que lo de arriba salga suavecito cuando abres la pagina */
-#arriba {
-  overflow: hidden;
+/* el encabezado del soundtrack no tiene portada, nomas le pongo un ancho maximo pa que el texto no quede tan largo */
+.encabezado {
+  max-width: 900px;
   position: relative;
   animation: entrar 0.8s;
 }
 
-/* el float left manda el texto a la izquierda y el float right manda la portada a la derecha */
-#izquierda {
-  float: left;
-  width: 70%;
-}
-
-#derecha {
-  float: right;
-  width: 260px;
-}
-
-/* la portada con height auto pa que no salga aplastada, se acomoda solita */
-#portada {
-  width: 260px;
-  height: auto;
-  border-radius: 16px;
-  border: 1px solid #ddd4c3;
+/* cada seccion, nomas es pa separarlas */
+.seccion {
+  margin-top: 80px;
 }
 
 .eyebrow {
@@ -127,237 +103,6 @@ body {
   text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
 }
 
-.intro {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #5b5a52;
-}
-
-/* los numeritos de abajo del texto, otra vez con float pa que queden en fila */
-.numeros {
-  overflow: hidden;
-  margin-top: 32px;
-}
-
-.numero {
-  float: left;
-  margin-right: 48px;
-}
-
-.cifra {
-  font-family: Anton, Impact, sans-serif;
-  font-size: 44px;
-  color: #e07b00;
-}
-
-.tarjetas {
-  overflow: hidden;
-  margin-top: 48px;
-}
-
-/* las 4 tarjetas con float left pa que queden en fila, 23% cada una y el margen de 2.66% pa que todo sume 100 (lo saque con calculadora jaja) */
-/* empiezan invisibles (opacity 0) y 24px mas abajo, luego el js les pone la clase visible y ahi si salen, como de fantasma */
-.tarjeta {
-  float: left;
-  width: 23%;
-  margin-right: 2.66%;
-  background-color: #ffffff;
-  border: 1px solid #ddd4c3;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  top: 24px;
-  opacity: 0;
-  transition: all 0.6s;
-}
-
-/* a la ultima le quito el margen porque si no ya no cabe y se baja*/
-#tarjeta4 {
-  margin-right: 0px;
-}
-
-.visible {
-  opacity: 1;
-  top: 0px;
-}
-
-/* cuando le pasas el mouse se sube tantito y se le pone el borde naranja, nomas pa que se mire chidori */
-.visible:hover {
-  top: -6px;
-  border-color: #e07b00;
-  box-shadow: 0px 16px 40px #f1d5aa;
-}
-
-/* el borde verde de la que seleccionas, le puse tambien el :hover porque si no al pasarle el mouse se ponia naranja otra vez */
-.activa,
-.activa:hover {
-  border-color: #2e8b3a;
-  box-shadow: 0px 0px 0px 2px #2e8b3a;
-}
-
-.foto {
-  height: 240px;
-  background-color: #e9e1d2;
-  overflow: hidden;
-}
-
-/* el object-fit cover hace que la imagen llene el cuadro sin estirarse, le corta lo que sobra */
-/* el transition es pa que el zoom de abajo se haga despacito y no de golpe */
-.foto img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  transition: all 0.6s;
-}
-
-/* cuando le pasas el mouse a la tarjeta la foto se hace tantito mas grande, el scale(1.06) es 6% mas grande */
-/* como .foto tiene overflow hidden lo que crece no se sale de la tarjeta */
-.visible:hover .foto img {
-  transform: scale(1.06);
-}
-
-.info {
-  padding-top: 36px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-bottom: 32px;
-}
-
-.nombre {
-  font-family: Anton, Impact, sans-serif;
-  font-weight: normal;
-  font-size: 34px;
-  letter-spacing: 1px;
-}
-
-.lema {
-  margin-top: 12px;
-  font-size: 15px;
-  font-weight: bold;
-  color: #e07b00;
-}
-
-/* le puse un alto minimo al texto pa que la rayita de abajo quede pareja en todas las tarjetas */
-.texto {
-  margin-top: 18px;
-  font-size: 16px;
-  line-height: 1.65;
-  color: #5b5a52;
-  min-height: 270px;
-}
-
-.datos {
-  overflow: hidden;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd4c3;
-}
-
-.datos div {
-  float: left;
-}
-
-/* como dice .datos .derecha le gana al de arriba y este si se va a la derecha */
-.datos .derecha {
-  float: right;
-  text-align: right;
-}
-
-.valor {
-  font-size: 15px;
-  color: #2e8b3a;
-}
-
-.etiqueta {
-  margin-top: 4px;
-  font-size: 12px;
-  color: #8c897e;
-}
-
-/* el textito de "ver ficha completa", con position relative pa poder moverlo con left */
-.ver-mas {
-  margin-top: 20px;
-  font-family: "Space Mono", monospace;
-  font-size: 13px;
-  color: #2e8b3a;
-  position: relative;
-  left: 0px;
-  transition: all 0.4s;
-}
-
-/* cuando pasas el mouse por la tarjeta la flechita se recorre a la derecha, como diciendo "picale" */
-.visible:hover .ver-mas {
-  left: 6px;
-  color: #e07b00;
-}
-
-/* ---------- las fichas ---------- */
-
-#fichas {
-  margin-top: 48px;
-}
-
-/* el mensajito que sale cuando no has escogido a nadie, con borde de rayitas (dashed) */
-.pista {
-  padding: 24px;
-  border: 2px dashed #ddd4c3;
-  border-radius: 16px;
-  text-align: center;
-  font-family: "Space Mono", monospace;
-  font-size: 14px;
-  color: #8c897e;
-}
-
-/* las fichas empiezan escondidas con display none, el js les pone display block a la que toca */
-/* la animacion entrar se vuelve a correr cada vez que una ficha aparece, por eso sale suavecito */
-.ficha {
-  display: none;
-  position: relative;
-  background-color: #ffffff;
-  border: 1px solid #ddd4c3;
-  border-left: 4px solid #2e8b3a;
-  border-radius: 16px;
-  padding: 32px;
-  animation: entrar 0.5s;
-}
-
-.ficha-nombre {
-  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
-  font-weight: normal;
-  font-size: 40px;
-  margin-top: 8px;
-  margin-bottom: 16px;
-}
-
-/* la lista de datos, el margin-left es pa que se vean los puntitos de la lista */
-.lista {
-  margin-left: 20px;
-  font-size: 16px;
-  line-height: 1.9;
-  color: #5b5a52;
-}
-
-.lista b {
-  color: #1c1e1a;
-}
-
-/* ---------- personajes secundarios ---------- */
-
-/* esta seccion empieza igual que las tarjetas: invisible y mas abajito, el js le pone la clase mostrar */
-.secundarios {
-  margin-top: 96px;
-  position: relative;
-  top: 24px;
-  opacity: 0;
-  transition: all 0.8s;
-}
-
-.mostrar {
-  opacity: 1;
-  top: 0px;
-}
-
 .subtitulo {
   font-family: "Pricedown Bl", Anton, Impact, sans-serif;
   font-weight: normal;
@@ -370,72 +115,48 @@ body {
   text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
 
-.chicos {
-  overflow: hidden;
-}
-
-/* las cajitas chiquitas, la misma cuenta de 23% y 2.66% que las tarjetas grandes */
-.chico {
-  float: left;
-  width: 23%;
-  margin-right: 2.66%;
-  margin-bottom: 24px;
-  overflow: hidden;
-  background-color: #ffffff;
-  border: 1px solid #ddd4c3;
-  border-radius: 16px;
-  position: relative;
-  top: 0px;
-  transition: all 0.4s;
-}
-
-.ultimo {
-  margin-right: 0px;
-}
-
-.chico:hover {
-  top: -4px;
-  border-color: #e07b00;
-  box-shadow: 0px 12px 30px #f1d5aa;
-}
-
-/* la foto de arriba de cada cajita, las fotos son cuadradas y aqui las corto a 170 de alto */
-/* el center top es pa que corte lo de abajo y no la cara, y el display block quita un huequito feo que deja la img abajo */
-.chico-foto {
-  display: block;
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  object-position: center top;
-  background-color: #e9e1d2;
-  transition: all 0.6s;
-}
-
-/* el mismo zoomcito que las tarjetas grandes pa que se sienta igual */
-.chico:hover .chico-foto {
-  transform: scale(1.06);
-}
-
-/* el texto va en su propia cajita con padding, asi la foto llega hasta las orillas y el texto no */
-.chico-info {
-  padding: 20px 24px 24px 24px;
-}
-
-.chico-nombre {
-  font-size: 17px;
-  font-weight: bold;
-}
-
-/* el min-height es pa que todas las cajitas midan lo mismo aunque un texto sea mas cortito */
-.chico-texto {
-  margin-top: 8px;
-  font-size: 14px;
-  line-height: 1.55;
+.intro {
+  font-size: 18px;
+  line-height: 1.6;
   color: #5b5a52;
-  min-height: 66px;
 }
 
-/* ---------- pagina del soundtrack ---------- */
+/* los numeritos, el d-flex de bootstrap ya los pone en fila */
+.numeros {
+  margin-top: 32px;
+}
+
+.cifra {
+  font-family: Anton, Impact, sans-serif;
+  font-size: 44px;
+  color: #e07b00;
+}
+
+.etiqueta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #8c897e;
+}
+
+.lema {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #e07b00;
+}
+
+/* ---------- la radio ---------- */
+
+/* el mensajito con borde de rayitas (dashed) */
+.pista {
+  padding: 24px;
+  border: 2px dashed #ddd4c3;
+  border-radius: 16px;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  color: #8c897e;
+}
 
 /* el cuadrito de la radio va separado de las estaciones */
 #radio {
@@ -477,29 +198,87 @@ body {
 }
 
 /* la cajita del video de youtube, empieza escondida y el js la enseña cuando sintonizas */
+/* el ancho maximo es 480, el alto ya lo calcula el ratio-16x9 de bootstrap */
 #reproductor {
   display: none;
+  max-width: 480px;
   margin-bottom: 32px;
   animation: entrar 0.5s;
   position: relative;
 }
 
 /* el iframe es como una ventanita que mete otra pagina adentro de la tuya, en este caso youtube */
-/* 480 x 270 es la medida de los videos (16:9) pero en chiquito */
 #youtube {
-  display: block;
-  width: 480px;
-  height: 270px;
   border: none;
   border-radius: 16px;
   background-color: #1c1e1a;
 }
 
+/* ---------- las estaciones ---------- */
+
+/* las cajitas, ya no llevan float, las acomodan los col de bootstrap */
+.chico {
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-radius: 16px;
+  position: relative;
+  top: 0px;
+  transition: all 0.4s;
+}
+
+.chico:hover {
+  top: -4px;
+  border-color: #e07b00;
+  box-shadow: 0px 12px 30px #f1d5aa;
+}
+
+/* las estaciones tienen manita porque se les puede picar */
+.estaciones .chico {
+  cursor: pointer;
+}
+
+.chico-foto {
+  display: block;
+  width: 100%;
+  height: 170px;
+  transition: all 0.6s;
+}
+
+.chico:hover .chico-foto {
+  transform: scale(1.06);
+}
+
+/* los logos no son fotos de personas entonces con contain se ven completitos sin cortarse */
+/* les puse fondo oscuro como la ruedita de la radio del juego */
+.logo {
+  object-fit: contain;
+  object-position: center;
+  padding: 28px;
+  background-color: #1c1e1a;
+}
+
+.chico-info {
+  padding: 20px 24px 24px 24px;
+}
+
+.chico-nombre {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.chico-texto {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5b5a52;
+}
+
 /* ---------- mi top de canciones ---------- */
 
-/* cada puesto es una cajita blanca, el overflow hidden es pa que los float de adentro no la aplasten */
+/* cada puesto es una cajita blanca, ya no lleva float, el d-flex de bootstrap pone el numero, fotos y texto en fila */
 .puesto {
-  overflow: hidden;
   margin-bottom: 20px;
   padding: 24px;
   background-color: #ffffff;
@@ -516,20 +295,13 @@ body {
   box-shadow: 0px 12px 30px #f1d5aa;
 }
 
-/* el numero grandote del lugar, con float pa que quede a la izquierda */
+/* el numero grandote del lugar */
 .lugar {
-  float: left;
-  width: 80px;
+  width: 56px;
   font-family: Anton, Impact, sans-serif;
   font-size: 72px;
   line-height: 1;
   color: #e07b00;
-}
-
-/* las imagenes van en su propia cajita a un lado del numero, si hay empate salen 2 */
-.puesto-fotos {
-  float: left;
-  margin-right: 32px;
 }
 
 /* las miniaturas de youtube son de 16:9 entonces 240 x 135 quedan sin aplastarse */
@@ -543,20 +315,10 @@ body {
   background-color: #e9e1d2;
 }
 
-/* el texto ocupa lo que sobra, el overflow hidden hace que no se meta abajo de las fotos */
-.puesto-info {
-  overflow: hidden;
-}
-
 /* la cajita del tema principal va separada del texto de arriba y con la raya verde como las fichas */
 .tema {
   margin-top: 32px;
   border-left: 4px solid #2e8b3a;
-}
-
-/* el min-height de las estaciones aqui no hace falta */
-.tema .chico-texto {
-  min-height: 0px;
 }
 
 /* la segunda cancion del empate con mas espacio arriba pa que se vea separada */
@@ -564,7 +326,7 @@ body {
   margin-top: 24px;
 }
 
-/* el link al video como botoncito naranja, igual que en la pagina de la historia */
+/* el link al video como botoncito naranja */
 .cancion {
   display: inline-block;
   margin-top: 12px;
@@ -583,18 +345,35 @@ body {
   color: #ffffff;
 }
 
-/* las estaciones tienen manita porque se les puede picar */
-.estaciones .chico {
-  cursor: pointer;
+/* ---------- los compositores ---------- */
+
+.ficha {
+  margin-top: 32px;
+  background-color: #ffffff;
+  border: 1px solid #ddd4c3;
+  border-left: 4px solid #2e8b3a;
+  border-radius: 16px;
+  padding: 32px;
 }
 
-/* los logos no son fotos de personas entonces con contain se ven completitos sin cortarse */
-/* les puse fondo oscuro como la ruedita de la radio del juego */
-.logo {
-  object-fit: contain;
-  object-position: center;
-  padding: 28px;
-  background-color: #1c1e1a;
+.ficha-nombre {
+  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+/* el margin-left es pa que se vean los puntitos de la lista */
+.lista {
+  margin-left: 20px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #5b5a52;
+}
+
+.lista b {
+  color: #1c1e1a;
 }
 
 .pie {
@@ -605,64 +384,27 @@ body {
   color: #8c897e;
 }
 
-/* ---------- boton pa subir ---------- */
-
-/* position fixed hace que el boton se quede pegado en la esquina aunque bajes la pagina */
-/* empieza invisible (opacity 0 y visibility hidden) y el js lo enseña cuando ya bajaste */
-#subir {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: none;
-  background-color: #2e8b3a;
-  color: #ffffff;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0px 8px 20px #c9c1b0;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s;
+/* en tablet achico tantito el titulo */
+@media (max-width: 991px) {
+  .titulo {
+    font-size: 64px;
+  }
 }
 
-#subir:hover {
-  background-color: #e07b00;
-}
-
-/* esto nomas jala cuando la pantalla es de menos de 400px (osea en el cel),
-le quito los float pa que todo quede uno abajo del otro */
+/* en el cel (menos de 400px) achico letras y espacios, lo de ponerse uno abajo del otro ya lo hace bootstrap */
 @media (max-width: 400px) {
   .contenedor {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  #izquierda {
-    float: none;
-    width: 100%;
-  }
-  #derecha {
-    float: none;
-    margin-top: 32px;
-  }
   .titulo {
     font-size: 44px;
-  }
-  .numero {
-    margin-right: 24px;
   }
   .cifra {
     font-size: 34px;
   }
-  .tarjeta {
-    float: none;
-    width: 100%;
-    margin-right: 0px;
-    margin-bottom: 20px;
-  }
-  .texto {
-    min-height: 0px;
+  .subtitulo {
+    font-size: 36px;
   }
   .ficha {
     padding: 24px;
@@ -670,39 +412,11 @@ le quito los float pa que todo quede uno abajo del otro */
   .ficha-nombre {
     font-size: 30px;
   }
-  .subtitulo {
-    font-size: 36px;
-  }
-  .chico {
-    float: none;
-    width: 100%;
-    margin-right: 0px;
-  }
-  /* en el cel la cajita es mas ancha, entonces le doy mas alto a la foto pa que no se vea aplastada */
-  .chico-foto {
-    height: 260px;
-  }
-  .chico-texto {
-    min-height: 0px;
-  }
-  /* en el top quito los float pa que el numero, las fotos y el texto queden uno abajo del otro */
   .lugar {
-    float: none;
     font-size: 56px;
-    margin-bottom: 12px;
-  }
-  .puesto-fotos {
-    float: none;
-    margin-right: 0px;
-    margin-bottom: 12px;
   }
   .miniatura {
     width: 100%;
     height: 160px;
-  }
-  /* en el cel no caben 480px entonces el video agarra todo lo ancho */
-  #youtube {
-    width: 100%;
-    height: 190px;
   }
 }

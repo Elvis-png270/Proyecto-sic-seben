@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA V · Quiz</title>
+    <!-- bootstrap pa la rejilla, font awesome pa los iconos y aos pa las animaciones al bajar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
     <!-- la letra del logo de gta (pricedown), no esta en google fonts entonces la saco de cdnfonts -->
     <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
@@ -12,116 +16,132 @@
   </head>
 
   <body>
-    <div class="contenedor">
+    <div class="container contenedor">
 
       <!-- el mismo menu de siempre pero aqui la actual es quiz -->
-      <div class="menu">
-        <a href="index.html">Personajes</a>
-        <a href="soundtrack.html">Soundtrack</a>
-        <a href="historia.html">Historia</a>
-        <a href="gtavi.html">GTA VI</a>
-        <a href="quiz.html" class="actual">Quiz</a>
-        <a href="nosotros.html">Nosotros</a>
-      </div>
+      <header>
+        <nav class="menu d-flex flex-wrap gap-2">
+          <a href="index.html"><i class="fa-solid fa-user-group"></i> Personajes</a>
+          <a href="soundtrack.html"><i class="fa-solid fa-radio"></i> Soundtrack</a>
+          <a href="historia.html"><i class="fa-solid fa-book-open"></i> Historia</a>
+          <a href="gtavi.html"><i class="fa-solid fa-gamepad"></i> GTA VI</a>
+          <a href="quiz.html" class="actual"><i class="fa-solid fa-circle-question"></i> Quiz</a>
+          <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+          <a href="nosotros.html"><i class="fa-solid fa-user"></i> Nosotros</a>
+        </nav>
+      </header>
 
-      <div class="encabezado">
-        <p class="eyebrow">GRAND THEFT AUTO V · EL QUIZ</p>
-        <h1 class="titulo">¿Qué tanto sabes?</h1>
-        <p class="intro">Son 8 preguntas sobre el juego. Pícale a la respuesta que creas que es la buena: si le atinas se pone verde y si no se pone roja y te enseña la correcta. Todas las respuestas vienen en las otras páginas, así que no hay excusa xd</p>
-        <!-- el label es el texto que va pegado a una cajita de escribir (input) -->
-        <!-- el for del label tiene que ser igual al id del input, asi si le picas al texto se activa la cajita -->
-        <!-- el placeholder es el texto gris que sale adentro cuando esta vacia -->
-        <div class="campo">
-          <label for="nombre" class="etiqueta-nombre">¿Cómo te llamas?</label>
-          <input type="text" id="nombre" class="caja-nombre" placeholder="Escribe tu nombre aquí">
-        </div>
+      <main>
+        <section class="encabezado">
+          <p class="eyebrow">GRAND THEFT AUTO V · EL QUIZ</p>
+          <h1 class="titulo">¿Qué tanto sabes?</h1>
+          <p class="intro">Son 8 preguntas sobre el juego. Pícale a la respuesta que creas que es la buena: si le atinas se pone verde y si no se pone roja y te enseña la correcta. Todas las respuestas vienen en las otras páginas, así que no hay excusa xd</p>
+          <!-- el label es el texto que va pegado a una cajita de escribir (input) -->
+          <!-- el for del label tiene que ser igual al id del input, asi si le picas al texto se activa la cajita -->
+          <!-- el placeholder es el texto gris que sale adentro cuando esta vacia -->
+          <div class="campo">
+            <label for="nombre" class="etiqueta-nombre">¿Cómo te llamas?</label>
+            <input type="text" id="nombre" class="caja-nombre" placeholder="Escribe tu nombre aquí">
+          </div>
 
-        <!-- este texto lo cambia el js cada que contestas una -->
-        <p class="contador" id="contador">Llevas 0 de 8 preguntas</p>
-      </div>
+          <!-- el contador y el mejor puntaje en fila con el d-flex de bootstrap -->
+          <!-- el mejor puntaje se guarda en el navegador con localStorage, asi no se borra aunque cierres la pagina -->
+          <div class="d-flex flex-wrap gap-2">
+            <p class="contador" id="contador">Llevas 0 de 8 preguntas</p>
+            <p class="contador mejor" id="mejor"><i class="fa-solid fa-trophy"></i> Tu mejor puntaje: todavía no juegas</p>
+          </div>
+        </section>
 
-      <!-- cada pregunta es una cajita blanca con 3 botones -->
-      <!-- el id de cada boton es p + numero de pregunta + letra (p1a, p1b...) pa que el js lo pueda pintar -->
-      <!-- en el onclick le mando al js el numero de la pregunta y la letra que escogiste -->
-      <div class="seccion">
+        <!-- cada pregunta es una cajita blanca con 3 botones -->
+        <!-- el id de cada boton es p + numero de pregunta + letra (p1a, p1b...) pa que el js lo pueda pintar -->
+        <!-- en el onclick le mando al js el numero de la pregunta y la letra que escogiste -->
+        <section class="seccion">
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 1</p>
-          <h3 class="pregunta-texto">¿Cómo se llama la ciudad donde pasa GTA V?</h3>
-          <button class="opcion" id="p1a" onclick="responder(1, 'a')">Vice City</button>
-          <button class="opcion" id="p1b" onclick="responder(1, 'b')">Los Santos</button>
-          <button class="opcion" id="p1c" onclick="responder(1, 'c')">Liberty City</button>
-        </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 1</p>
+            <h3 class="pregunta-texto">¿Cómo se llama la ciudad donde pasa GTA V?</h3>
+            <button class="opcion" id="p1a" onclick="responder(1, 'a')">Vice City</button>
+            <button class="opcion" id="p1b" onclick="responder(1, 'b')">Los Santos</button>
+            <button class="opcion" id="p1c" onclick="responder(1, 'c')">Liberty City</button>
+          </article>
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 2</p>
-          <h3 class="pregunta-texto">¿Cuál de los protagonistas vive en Sandy Shores?</h3>
-          <button class="opcion" id="p2a" onclick="responder(2, 'a')">Michael</button>
-          <button class="opcion" id="p2b" onclick="responder(2, 'b')">Franklin</button>
-          <button class="opcion" id="p2c" onclick="responder(2, 'c')">Trevor</button>
-        </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 2</p>
+            <h3 class="pregunta-texto">¿Cuál de los protagonistas vive en Sandy Shores?</h3>
+            <button class="opcion" id="p2a" onclick="responder(2, 'a')">Michael</button>
+            <button class="opcion" id="p2b" onclick="responder(2, 'b')">Franklin</button>
+            <button class="opcion" id="p2c" onclick="responder(2, 'c')">Trevor</button>
+          </article>
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 3</p>
-          <h3 class="pregunta-texto">¿Cómo se llama el rottweiler que termina cuidando Franklin?</h3>
-          <button class="opcion" id="p3a" onclick="responder(3, 'a')">Chop</button>
-          <button class="opcion" id="p3b" onclick="responder(3, 'b')">Max</button>
-          <button class="opcion" id="p3c" onclick="responder(3, 'c')">Rocky</button>
-        </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 3</p>
+            <h3 class="pregunta-texto">¿Cómo se llama el rottweiler que termina cuidando Franklin?</h3>
+            <button class="opcion" id="p3a" onclick="responder(3, 'a')">Chop</button>
+            <button class="opcion" id="p3b" onclick="responder(3, 'b')">Max</button>
+            <button class="opcion" id="p3c" onclick="responder(3, 'c')">Rocky</button>
+          </article>
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 4</p>
-          <h3 class="pregunta-texto">¿En qué año pasa el prólogo en North Yankton?</h3>
-          <button class="opcion" id="p4a" onclick="responder(4, 'a')">2004</button>
-          <button class="opcion" id="p4b" onclick="responder(4, 'b')">2013</button>
-          <button class="opcion" id="p4c" onclick="responder(4, 'c')">1999</button>
-        </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 4</p>
+            <h3 class="pregunta-texto">¿En qué año pasa el prólogo en North Yankton?</h3>
+            <button class="opcion" id="p4a" onclick="responder(4, 'a')">2004</button>
+            <button class="opcion" id="p4b" onclick="responder(4, 'b')">2013</button>
+            <button class="opcion" id="p4c" onclick="responder(4, 'c')">1999</button>
+          </article>
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 5</p>
-          <h3 class="pregunta-texto">¿Qué estación de radio conduce Kenny Loggins?</h3>
-          <button class="opcion" id="p5a" onclick="responder(5, 'a')">Non-Stop-Pop FM</button>
-          <button class="opcion" id="p5b" onclick="responder(5, 'b')">Los Santos Rock Radio</button>
-          <button class="opcion" id="p5c" onclick="responder(5, 'c')">Channel X</button>
-        </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 5</p>
+            <h3 class="pregunta-texto">¿Qué estación de radio conduce Kenny Loggins?</h3>
+            <button class="opcion" id="p5a" onclick="responder(5, 'a')">Non-Stop-Pop FM</button>
+            <button class="opcion" id="p5b" onclick="responder(5, 'b')">Los Santos Rock Radio</button>
+            <button class="opcion" id="p5c" onclick="responder(5, 'c')">Channel X</button>
+          </article>
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 6</p>
-          <h3 class="pregunta-texto">¿Cuántos finales distintos tiene el juego?</h3>
-          <button class="opcion" id="p6a" onclick="responder(6, 'a')">Uno</button>
-          <button class="opcion" id="p6b" onclick="responder(6, 'b')">Dos</button>
-          <button class="opcion" id="p6c" onclick="responder(6, 'c')">Tres</button>
-        </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 6</p>
+            <h3 class="pregunta-texto">¿Cuántos finales distintos tiene el juego?</h3>
+            <button class="opcion" id="p6a" onclick="responder(6, 'a')">Uno</button>
+            <button class="opcion" id="p6b" onclick="responder(6, 'b')">Dos</button>
+            <button class="opcion" id="p6c" onclick="responder(6, 'c')">Tres</button>
+          </article>
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 7</p>
-          <h3 class="pregunta-texto">¿Quién es el que planea los golpes?</h3>
-          <button class="opcion" id="p7a" onclick="responder(7, 'a')">Lester</button>
-          <button class="opcion" id="p7b" onclick="responder(7, 'b')">Lamar</button>
-          <button class="opcion" id="p7c" onclick="responder(7, 'c')">Dave Norton</button>
-        </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 7</p>
+            <h3 class="pregunta-texto">¿Quién es el que planea los golpes?</h3>
+            <button class="opcion" id="p7a" onclick="responder(7, 'a')">Lester</button>
+            <button class="opcion" id="p7b" onclick="responder(7, 'b')">Lamar</button>
+            <button class="opcion" id="p7c" onclick="responder(7, 'c')">Dave Norton</button>
+          </article>
 
-        <div class="pregunta">
-          <p class="eyebrow">PREGUNTA 8</p>
-          <h3 class="pregunta-texto">¿Cómo se llama el tema principal que suena después del prólogo?</h3>
-          <button class="opcion" id="p8a" onclick="responder(8, 'a')">Sleepwalking</button>
-          <button class="opcion" id="p8b" onclick="responder(8, 'b')">Welcome to Los Santos</button>
-          <button class="opcion" id="p8c" onclick="responder(8, 'c')">The Setup</button>
-        </div>
-      </div>
+          <article class="pregunta" data-aos="fade-up">
+            <p class="eyebrow">PREGUNTA 8</p>
+            <h3 class="pregunta-texto">¿Cómo se llama el tema principal que suena después del prólogo?</h3>
+            <button class="opcion" id="p8a" onclick="responder(8, 'a')">Sleepwalking</button>
+            <button class="opcion" id="p8b" onclick="responder(8, 'b')">Welcome to Los Santos</button>
+            <button class="opcion" id="p8c" onclick="responder(8, 'c')">The Setup</button>
+          </article>
+        </section>
 
-      <!-- el resultado empieza escondido y el js lo enseña cuando contestas las 8 -->
-      <div class="resultado" id="resultado">
-        <p class="eyebrow">TU RESULTADO</p>
-        <p class="calificacion" id="calificacion">0 / 8</p>
-        <p class="mensaje" id="mensaje"></p>
-        <!-- el location.reload() recarga la pagina, asi se borra todo y empiezas de nuevo -->
-        <button class="otra-vez" onclick="location.reload()">Volver a intentar</button>
-      </div>
+        <!-- el resultado empieza escondido y el js lo enseña cuando contestas las 8 -->
+        <section class="resultado" id="resultado">
+          <p class="eyebrow">TU RESULTADO</p>
+          <p class="calificacion" id="calificacion">0 / 8</p>
+          <p class="mensaje" id="mensaje"></p>
+          <!-- el location.reload() recarga la pagina, asi se borra todo y empiezas de nuevo -->
+          <button class="otra-vez" onclick="location.reload()"><i class="fa-solid fa-rotate-right"></i> Volver a intentar</button>
+        </section>
+      </main>
 
-      <p class="pie">Proyecto escolar · GTA V es de Rockstar Games</p>
+      <footer class="pie">Proyecto escolar · GTA V es de Rockstar Games</footer>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- sweetalert2 es la libreria de las ventanitas bonitas que salen en medio de la pantalla -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
     <script src="quiz.js"></script>
+    <!-- esto prende las animaciones de aos, el once true es pa que nomas salgan la primera vez -->
+    <script>
+      AOS.init({ once: true, duration: 700 })
+    </script>
   </body>
 </html>

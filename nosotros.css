@@ -7,16 +7,23 @@
   box-sizing: border-box;
 }
 
+/* bootstrap le pone margen abajo a los p, h1, h2, h3 y ul, aqui se lo quito pa que se vea como antes */
+h1, h2, h3, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* el line-height normal es porque bootstrap lo cambia y todo se veia mas separado */
 body {
   background-color: #f5efe3;
   color: #1c1e1a;
   font-family: Inter, Arial, sans-serif;
+  line-height: normal;
 }
 
+/* el container de bootstrap ya lo centra, aqui nomas el ancho maximo y el espacio de arriba y abajo */
 .contenedor {
-  width: 90%;
   max-width: 1100px;
-  margin: 0px auto;
   padding-top: 96px;
   padding-bottom: 96px;
 }
@@ -27,10 +34,8 @@ body {
   margin-bottom: 56px;
 }
 
+/* el d-flex de bootstrap ya los pone en fila con espacio */
 .menu a {
-  display: inline-block;
-  margin-right: 8px;
-  margin-bottom: 8px;
   padding: 8px 18px;
   border: 1px solid #ddd4c3;
   border-radius: 20px;
@@ -66,27 +71,20 @@ body {
   }
 }
 
-/* texto a la izquierda y la foto a la derecha con float, el overflow hidden pa que no se aplaste */
+/* texto a la izquierda y la foto a la derecha, ya no con float sino con el row de bootstrap */
 #arriba {
-  overflow: hidden;
   position: relative;
   animation: entrar 0.8s;
 }
 
-#izquierda {
-  float: left;
-  width: 55%;
-}
-
-#derecha {
-  float: right;
-  width: 380px;
-}
-
 /* mi foto es mas alta que ancha, con height auto se acomoda sola y no se aplasta */
+/* el width 100% con max-width hace que en el cel se haga chica y en compu se quede en 380 */
 #foto {
   display: block;
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
   height: auto;
   border-radius: 16px;
   border: 1px solid #ddd4c3;
@@ -190,23 +188,18 @@ body {
   color: #8c897e;
 }
 
-/* en el cel quito los float pa que todo quede uno abajo del otro */
+/* en tablet achico tantito el titulo */
+@media (max-width: 991px) {
+  .titulo {
+    font-size: 64px;
+  }
+}
+
+/* en el cel achico letras y espacios, lo de ponerse uno abajo del otro ya lo hace bootstrap */
 @media (max-width: 400px) {
   .contenedor {
     padding-top: 40px;
     padding-bottom: 40px;
-  }
-  #izquierda {
-    float: none;
-    width: 100%;
-  }
-  #derecha {
-    float: none;
-    width: 100%;
-    margin-top: 32px;
-  }
-  #foto {
-    width: 100%;
   }
   .titulo {
     font-size: 44px;

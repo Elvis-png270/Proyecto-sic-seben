@@ -4,252 +4,287 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA V · Soundtrack</title>
+    <!-- bootstrap pa la rejilla, font awesome pa los iconos y aos pa las animaciones al bajar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
     <!-- la letra del logo de gta (pricedown), no esta en google fonts entonces la saco de cdnfonts -->
     <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
-    <!-- esta pagina tiene su propio css, es una copia del style.css pa que se vean igualitas -->
+    <!-- esta pagina tiene su propio css, va al final pa que le gane a bootstrap -->
     <link rel="stylesheet" href="soundtrack.css">
   </head>
 
   <body>
-    <div class="contenedor">
+    <div class="container contenedor">
 
-      <!-- el mismo menu que en index.html pero aqui la actual es soundtrack -->
-      <div class="menu">
-        <a href="index.html">Personajes</a>
-        <a href="soundtrack.html" class="actual">Soundtrack</a>
-        <a href="historia.html">Historia</a>
-        <a href="gtavi.html">GTA VI</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="nosotros.html">Nosotros</a>
-      </div>
+      <!-- el mismo menu de todas las paginas pero aqui la actual es soundtrack -->
+      <header>
+        <nav class="menu d-flex flex-wrap gap-2">
+          <a href="index.html"><i class="fa-solid fa-user-group"></i> Personajes</a>
+          <a href="soundtrack.html" class="actual"><i class="fa-solid fa-radio"></i> Soundtrack</a>
+          <a href="historia.html"><i class="fa-solid fa-book-open"></i> Historia</a>
+          <a href="gtavi.html"><i class="fa-solid fa-gamepad"></i> GTA VI</a>
+          <a href="quiz.html"><i class="fa-solid fa-circle-question"></i> Quiz</a>
+          <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+          <a href="nosotros.html"><i class="fa-solid fa-user"></i> Nosotros</a>
+        </nav>
+      </header>
 
-      <div class="encabezado">
-        <p class="eyebrow">GRAND THEFT AUTO V · LA MÚSICA</p>
-        <h1 class="titulo">La ciudad suena así.</h1>
-        <p class="intro">En GTA V cada vez que te subes a un carro prendes la radio. El juego tiene más de 15 estaciones con canciones reales, locutores famosos y comerciales de broma. Además tiene música original que cambia según lo que pasa en las misiones.</p>
+      <main>
+        <section class="encabezado">
+          <p class="eyebrow">GRAND THEFT AUTO V · LA MÚSICA</p>
+          <h1 class="titulo">La ciudad suena así.</h1>
+          <p class="intro">En GTA V cada vez que te subes a un carro prendes la radio. El juego tiene más de 15 estaciones con canciones reales, locutores famosos y comerciales de broma. Además tiene música original que cambia según lo que pasa en las misiones.</p>
 
-        <!-- los mismos numeritos que en la pagina de personajes -->
-        <div class="numeros">
-          <div class="numero">
-            <p class="cifra">+240</p>
-            <p class="etiqueta">CANCIONES CON LICENCIA</p>
-          </div>
-          <div class="numero">
-            <p class="cifra">+15</p>
-            <p class="etiqueta">ESTACIONES DE RADIO</p>
-          </div>
-          <div class="numero">
-            <p class="cifra">4</p>
-            <p class="etiqueta">ARTISTAS EN EL SCORE</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- las estaciones de radio, cada una con su logo y quien la conduce -->
-      <div class="seccion">
-        <p class="eyebrow">LAS ESTACIONES</p>
-        <h2 class="subtitulo">Radio de Los Santos</h2>
-
-        <!-- este cuadrito cambia cuando le picas a una estacion, el js le cambia el texto -->
-        <p class="pista" id="radio">📻 Pícale a una estación pa sintonizarla</p>
-
-        <!-- aqui sale el video de youtube con la estacion completa, empieza escondido hasta que sintonizas una -->
-        <!-- el allow autoplay es pa que youtube deje que empiece a sonar solito -->
-        <div id="reproductor">
-          <iframe id="youtube" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-
-        <!-- reuse las cajitas de los personajes secundarios (chico) pa no hacer otro estilo -->
-        <!-- le mando el numero y el nombre a la funcion pa que sepa cual prender -->
-        <div class="chicos estaciones">
-          <div class="chico" id="estacion1" onclick="sintonizar(1, 'Los Santos Rock Radio')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/7/7c/LosSantosRockRadio-GTAV-Logo.svg/revision/latest?cb=20220108080631" alt="Los Santos Rock Radio" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Los Santos Rock Radio</p>
-              <p class="lema">Rock clásico</p>
-              <p class="chico-texto">La conduce Kenny Loggins. Puro rock de los 70 y 80 pa la carretera.</p>
+          <!-- los mismos numeritos que en la pagina de personajes, en fila con el d-flex de bootstrap -->
+          <div class="numeros d-flex flex-wrap gap-5">
+            <div class="numero">
+              <p class="cifra">+240</p>
+              <p class="etiqueta">CANCIONES CON LICENCIA</p>
+            </div>
+            <div class="numero">
+              <p class="cifra">+15</p>
+              <p class="etiqueta">ESTACIONES DE RADIO</p>
+            </div>
+            <div class="numero">
+              <p class="cifra">4</p>
+              <p class="etiqueta">ARTISTAS EN EL SCORE</p>
             </div>
           </div>
-          <div class="chico" id="estacion2" onclick="sintonizar(2, 'Non-Stop-Pop FM')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/5/51/NonStopPopFM-GTAV-Logo.svg/revision/latest?cb=20220108080720" alt="Non-Stop-Pop FM" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Non-Stop-Pop FM</p>
-              <p class="lema">Pop</p>
-              <p class="chico-texto">La conduce Cara Delevingne. Los éxitos pop que todos se saben.</p>
-            </div>
-          </div>
-          <div class="chico" id="estacion3" onclick="sintonizar(3, 'Radio Los Santos')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/e/ea/RadioLosSantos-GTAV-Logo.svg/revision/latest?cb=20220108080747" alt="Radio Los Santos" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Radio Los Santos</p>
-              <p class="lema">Hip hop</p>
-              <p class="chico-texto">La conduce Big Boy. El hip hop más nuevo de la ciudad.</p>
-            </div>
-          </div>
-          <div class="chico ultimo" id="estacion4" onclick="sintonizar(4, 'West Coast Classics')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/9/9f/WestCoastClassics-GTAV-Logo.svg/revision/latest?cb=20220108081157" alt="West Coast Classics" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">West Coast Classics</p>
-              <p class="lema">Hip hop clásico</p>
-              <p class="chico-texto">La conduce DJ Pooh. Los clásicos del hip hop de la costa oeste.</p>
-            </div>
-          </div>
-          <div class="chico" id="estacion5" onclick="sintonizar(5, 'Channel X')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/3/36/ChannelX-GTAV-Logo.svg/revision/latest?cb=20220108080846" alt="Channel X" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Channel X</p>
-              <p class="lema">Punk</p>
-              <p class="chico-texto">La conduce Keith Morris. Punk rápido y ruidoso de los 80.</p>
-            </div>
-          </div>
-          <div class="chico" id="estacion6" onclick="sintonizar(6, 'Rebel Radio')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/c/ca/RebelRadio-GTAV-Logo.svg/revision/latest?cb=20220108080949" alt="Rebel Radio" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">Rebel Radio</p>
-              <p class="lema">Country</p>
-              <p class="chico-texto">La conduce Jesco White. Country viejito, perfecta pa Blaine County.</p>
-            </div>
-          </div>
-          <div class="chico" id="estacion7" onclick="sintonizar(7, 'East Los FM')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/c/c4/EastLosFM-GTAV-Logo.svg/revision/latest?cb=20220108081122" alt="East Los FM" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">East Los FM</p>
-              <p class="lema">Música mexicana</p>
-              <p class="chico-texto">La conducen DJ Camilo y Don Cheto. Cumbias, rancheras y más.</p>
-            </div>
-          </div>
-          <div class="chico ultimo" id="estacion8" onclick="sintonizar(8, 'FlyLo FM')">
-            <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/3/35/FlyLoFM-GTAV-Logo.svg/revision/latest?cb=20220108081407" alt="FlyLo FM" referrerpolicy="no-referrer">
-            <div class="chico-info">
-              <p class="chico-nombre">FlyLo FM</p>
-              <p class="lema">Electrónica</p>
-              <p class="chico-texto">La conduce Flying Lotus. Música electrónica rara pero bien chida.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- mi top de canciones, cada puesto es una cajita con el numero, la imagen y el link al video -->
-      <!-- las imagenes son las miniaturas de los mismos videos, youtube las da en img.youtube.com/vi/CODIGO/mqdefault.jpg -->
-      <!-- el target _blank es pa que el video se abra en otra pestaña y no te saque de la pagina -->
-      <div class="seccion">
-        <p class="eyebrow">EN MI OPINIÓN</p>
-        <h2 class="subtitulo">Mi top 5 de canciones</h2>
-        <p class="intro">De todas las canciones que suenan en la radio del juego, estas son mis favoritas. En el 1 y el 2 hubo empate porque no me pude decidir xd</p>
+        <!-- las estaciones de radio, cada una con su logo y quien la conduce -->
+        <!-- el data-aos hace que la seccion salga de abajito cuando llegas a ella -->
+        <section class="seccion" data-aos="fade-up">
+          <p class="eyebrow">LAS ESTACIONES</p>
+          <h2 class="subtitulo">Radio de Los Santos</h2>
 
-        <div class="top">
-          <div class="puesto">
-            <p class="lugar">1</p>
+          <!-- este cuadrito cambia cuando le picas a una estacion, el js le cambia el texto -->
+          <p class="pista" id="radio">📻 Pícale a una estación pa sintonizarla</p>
+
+          <!-- aqui sale el video de youtube con la estacion completa, empieza escondido hasta que sintonizas una -->
+          <!-- ratio ratio-16x9 es de bootstrap: hace que el video siempre mida 16:9 aunque cambie el ancho -->
+          <!-- el allow autoplay es pa que youtube deje que empiece a sonar solito -->
+          <div id="reproductor">
+            <div class="ratio ratio-16x9">
+              <iframe id="youtube" title="Estación de radio de GTA V" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <!-- reuse las cajitas de los personajes secundarios (chico) pa no hacer otro estilo -->
+          <!-- 1 por fila en cel, 2 en tablet chica y 4 en compu -->
+          <!-- le mando el numero y el nombre a la funcion pa que sepa cual prender -->
+          <div class="chicos estaciones row g-4">
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion1" onclick="sintonizar(1, 'Los Santos Rock Radio')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/7/7c/LosSantosRockRadio-GTAV-Logo.svg/revision/latest?cb=20220108080631" alt="Logo de Los Santos Rock Radio" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Los Santos Rock Radio</p>
+                  <p class="lema">Rock clásico</p>
+                  <p class="chico-texto">La conduce Kenny Loggins. Puro rock de los 70 y 80 pa la carretera.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion2" onclick="sintonizar(2, 'Non-Stop-Pop FM')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/5/51/NonStopPopFM-GTAV-Logo.svg/revision/latest?cb=20220108080720" alt="Logo de Non-Stop-Pop FM" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Non-Stop-Pop FM</p>
+                  <p class="lema">Pop</p>
+                  <p class="chico-texto">La conduce Cara Delevingne. Los éxitos pop que todos se saben.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion3" onclick="sintonizar(3, 'Radio Los Santos')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/e/ea/RadioLosSantos-GTAV-Logo.svg/revision/latest?cb=20220108080747" alt="Logo de Radio Los Santos" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Radio Los Santos</p>
+                  <p class="lema">Hip hop</p>
+                  <p class="chico-texto">La conduce Big Boy. El hip hop más nuevo de la ciudad.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion4" onclick="sintonizar(4, 'West Coast Classics')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/9/9f/WestCoastClassics-GTAV-Logo.svg/revision/latest?cb=20220108081157" alt="Logo de West Coast Classics" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">West Coast Classics</p>
+                  <p class="lema">Hip hop clásico</p>
+                  <p class="chico-texto">La conduce DJ Pooh. Los clásicos del hip hop de la costa oeste.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion5" onclick="sintonizar(5, 'Channel X')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/3/36/ChannelX-GTAV-Logo.svg/revision/latest?cb=20220108080846" alt="Logo de Channel X" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Channel X</p>
+                  <p class="lema">Punk</p>
+                  <p class="chico-texto">La conduce Keith Morris. Punk rápido y ruidoso de los 80.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion6" onclick="sintonizar(6, 'Rebel Radio')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/c/ca/RebelRadio-GTAV-Logo.svg/revision/latest?cb=20220108080949" alt="Logo de Rebel Radio" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">Rebel Radio</p>
+                  <p class="lema">Country</p>
+                  <p class="chico-texto">La conduce Jesco White. Country viejito, perfecta pa Blaine County.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion7" onclick="sintonizar(7, 'East Los FM')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/c/c4/EastLosFM-GTAV-Logo.svg/revision/latest?cb=20220108081122" alt="Logo de East Los FM" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">East Los FM</p>
+                  <p class="lema">Música mexicana</p>
+                  <p class="chico-texto">La conducen DJ Camilo y Don Cheto. Cumbias, rancheras y más.</p>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="chico" id="estacion8" onclick="sintonizar(8, 'FlyLo FM')">
+                <img class="chico-foto logo" src="https://static.wikia.nocookie.net/gtawiki/images/3/35/FlyLoFM-GTAV-Logo.svg/revision/latest?cb=20220108081407" alt="Logo de FlyLo FM" referrerpolicy="no-referrer">
+                <div class="chico-info">
+                  <p class="chico-nombre">FlyLo FM</p>
+                  <p class="lema">Electrónica</p>
+                  <p class="chico-texto">La conduce Flying Lotus. Música electrónica rara pero bien chida.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- mi top de canciones, cada puesto es una cajita con el numero, la imagen y el link al video -->
+        <!-- las imagenes son las miniaturas de los mismos videos, youtube las da en img.youtube.com/vi/CODIGO/mqdefault.jpg -->
+        <!-- d-flex flex-column flex-md-row: en cel va todo uno abajo del otro y desde tablet se pone en fila -->
+        <!-- el target _blank es pa que el video se abra en otra pestaña y no te saque de la pagina -->
+        <section class="seccion" data-aos="fade-up">
+          <p class="eyebrow">EN MI OPINIÓN</p>
+          <h2 class="subtitulo">Mi top 5 de canciones</h2>
+          <p class="intro">De todas las canciones que suenan en la radio del juego, estas son mis favoritas. En el 1 y el 2 hubo empate porque no me pude decidir xd</p>
+
+          <div class="top">
+            <article class="puesto d-flex flex-column flex-md-row align-items-md-start gap-4">
+              <p class="lugar">1</p>
+              <div class="puesto-fotos">
+                <img class="miniatura" src="https://img.youtube.com/vi/B5YNiCfWC3A/mqdefault.jpg" alt="Video de Swimming Pools">
+                <img class="miniatura" src="https://img.youtube.com/vi/mMfxI3r_LyA/mqdefault.jpg" alt="Video de Lady (Hear Me Tonight)">
+              </div>
+              <div class="puesto-info">
+                <p class="chico-nombre">Swimming Pools (Drank)</p>
+                <p class="lema">Kendrick Lamar · Radio Los Santos</p>
+                <a class="cancion" href="https://www.youtube.com/watch?v=B5YNiCfWC3A" target="_blank"><i class="fa-brands fa-youtube"></i> Ver video oficial</a>
+                <p class="chico-nombre empate">Lady (Hear Me Tonight)</p>
+                <p class="lema">Modjo · Non-Stop-Pop FM</p>
+                <a class="cancion" href="https://www.youtube.com/watch?v=mMfxI3r_LyA" target="_blank"><i class="fa-brands fa-youtube"></i> Ver video oficial</a>
+              </div>
+            </article>
+
+            <article class="puesto d-flex flex-column flex-md-row align-items-md-start gap-4">
+              <p class="lugar">2</p>
+              <div class="puesto-fotos">
+                <img class="miniatura" src="https://img.youtube.com/vi/N3zf9q8mbWs/mqdefault.jpg" alt="Video de The Setup">
+                <img class="miniatura" src="https://img.youtube.com/vi/rprf7LEraU4/mqdefault.jpg" alt="Video de Sleepwalking">
+              </div>
+              <div class="puesto-info">
+                <p class="chico-nombre">The Setup</p>
+                <p class="lema">Favored Nations · Radio Mirror Park</p>
+                <a class="cancion" href="https://www.youtube.com/watch?v=N3zf9q8mbWs" target="_blank"><i class="fa-brands fa-youtube"></i> Ver video oficial</a>
+                <p class="chico-nombre empate">Sleepwalking</p>
+                <p class="lema">The Chain Gang of 1974 · Radio Mirror Park</p>
+                <a class="cancion" href="https://www.youtube.com/watch?v=rprf7LEraU4" target="_blank"><i class="fa-brands fa-youtube"></i> Ver video oficial</a>
+              </div>
+            </article>
+
+            <article class="puesto d-flex flex-column flex-md-row align-items-md-start gap-4">
+              <p class="lugar">3</p>
+              <div class="puesto-fotos">
+                <img class="miniatura" src="https://img.youtube.com/vi/8Z7mX-EtgCs/mqdefault.jpg" alt="Video de We Roll Deep">
+              </div>
+              <div class="puesto-info">
+                <p class="chico-nombre">We Roll Deep</p>
+                <p class="lema">The Conscious Daughters · West Coast Classics</p>
+                <a class="cancion" href="https://www.youtube.com/watch?v=8Z7mX-EtgCs" target="_blank"><i class="fa-brands fa-youtube"></i> Ver video oficial</a>
+              </div>
+            </article>
+
+            <article class="puesto d-flex flex-column flex-md-row align-items-md-start gap-4">
+              <p class="lugar">4</p>
+              <div class="puesto-fotos">
+                <img class="miniatura" src="https://img.youtube.com/vi/OfXid_DUI-A/mqdefault.jpg" alt="Video de El Tatuado">
+              </div>
+              <div class="puesto-info">
+                <p class="chico-nombre">El Tatuado</p>
+                <p class="lema">Don Cheto · East Los FM</p>
+                <a class="cancion" href="https://www.youtube.com/watch?v=OfXid_DUI-A" target="_blank"><i class="fa-brands fa-youtube"></i> Ver video oficial</a>
+              </div>
+            </article>
+
+            <article class="puesto d-flex flex-column flex-md-row align-items-md-start gap-4">
+              <p class="lugar">5</p>
+              <div class="puesto-fotos">
+                <img class="miniatura" src="https://img.youtube.com/vi/9e7ZbgQEbNE/mqdefault.jpg" alt="Video de R - Cali">
+              </div>
+              <div class="puesto-info">
+                <p class="chico-nombre">R - Cali</p>
+                <p class="lema">A$AP Rocky · Radio Los Santos</p>
+                <a class="cancion" href="https://www.youtube.com/watch?v=9e7ZbgQEbNE" target="_blank"><i class="fa-brands fa-youtube"></i> Ver video oficial</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- la musica original, la puse en una ficha como las de los personajes -->
+        <section class="seccion" data-aos="fade-up">
+          <p class="eyebrow">LA MÚSICA ORIGINAL</p>
+          <h2 class="subtitulo">El score del juego</h2>
+          <p class="intro">Fuera de la radio, las misiones tienen música hecha especialmente para el juego. Se pone más intensa cuando te persigue la policía y más tranquila cuando todo está en calma.</p>
+
+          <!-- el tema principal, reuse la cajita del top pero sin numero -->
+          <article class="puesto tema d-flex flex-column flex-md-row align-items-md-start gap-4">
             <div class="puesto-fotos">
-              <img class="miniatura" src="https://img.youtube.com/vi/B5YNiCfWC3A/mqdefault.jpg" alt="Swimming Pools">
-              <img class="miniatura" src="https://img.youtube.com/vi/mMfxI3r_LyA/mqdefault.jpg" alt="Lady">
+              <img class="miniatura" src="https://img.youtube.com/vi/Ibaze-ZF3Vk/mqdefault.jpg" alt="Portada de Welcome to Los Santos">
             </div>
             <div class="puesto-info">
-              <p class="chico-nombre">Swimming Pools (Drank)</p>
-              <p class="lema">Kendrick Lamar · Radio Los Santos</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=B5YNiCfWC3A" target="_blank">▶ Ver video oficial</a>
-              <p class="chico-nombre empate">Lady (Hear Me Tonight)</p>
-              <p class="lema">Modjo · Non-Stop-Pop FM</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=mMfxI3r_LyA" target="_blank">▶ Ver video oficial</a>
+              <p class="eyebrow">EL TEMA PRINCIPAL</p>
+              <p class="chico-nombre">Welcome to Los Santos</p>
+              <p class="lema">Oh No · 2013</p>
+              <p class="chico-texto">Es la canción oficial del juego. Suena justo al terminar el prólogo, cuando la pantalla pasa de la nieve de North Yankton al sol de Los Santos y salen los créditos de inicio.</p>
+              <a class="cancion" href="https://www.youtube.com/watch?v=Ibaze-ZF3Vk" target="_blank"><i class="fa-brands fa-youtube"></i> Escuchar en YouTube</a>
             </div>
-          </div>
+          </article>
 
-          <div class="puesto">
-            <p class="lugar">2</p>
-            <div class="puesto-fotos">
-              <img class="miniatura" src="https://img.youtube.com/vi/N3zf9q8mbWs/mqdefault.jpg" alt="The Setup">
-              <img class="miniatura" src="https://img.youtube.com/vi/rprf7LEraU4/mqdefault.jpg" alt="Sleepwalking">
-            </div>
-            <div class="puesto-info">
-              <p class="chico-nombre">The Setup</p>
-              <p class="lema">Favored Nations · Radio Mirror Park</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=N3zf9q8mbWs" target="_blank">▶ Ver video oficial</a>
-              <p class="chico-nombre empate">Sleepwalking</p>
-              <p class="lema">The Chain Gang of 1974 · Radio Mirror Park</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=rprf7LEraU4" target="_blank">▶ Ver video oficial</a>
-            </div>
-          </div>
+          <article class="ficha">
+            <p class="eyebrow">QUIÉN LA HIZO</p>
+            <h3 class="ficha-nombre">Los compositores</h3>
+            <ul class="lista">
+              <li><b>Tangerine Dream:</b> una banda alemana de música electrónica, de las primeras en usar sintetizadores.</li>
+              <li><b>Woody Jackson:</b> también hizo la música de Red Dead Redemption.</li>
+              <li><b>The Alchemist y Oh No:</b> productores de hip hop, después sacaron el disco Welcome to Los Santos.</li>
+              <li><b>Música que cambia:</b> la canción se va armando por capas según lo que pase en la misión.</li>
+              <li><b>Self Radio:</b> en la versión de PC puedes meter tus propias canciones como si fuera otra estación.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
 
-          <div class="puesto">
-            <p class="lugar">3</p>
-            <div class="puesto-fotos">
-              <img class="miniatura" src="https://img.youtube.com/vi/8Z7mX-EtgCs/mqdefault.jpg" alt="We Roll Deep">
-            </div>
-            <div class="puesto-info">
-              <p class="chico-nombre">We Roll Deep</p>
-              <p class="lema">The Conscious Daughters · West Coast Classics</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=8Z7mX-EtgCs" target="_blank">▶ Ver video oficial</a>
-            </div>
-          </div>
-
-          <div class="puesto">
-            <p class="lugar">4</p>
-            <div class="puesto-fotos">
-              <img class="miniatura" src="https://img.youtube.com/vi/OfXid_DUI-A/mqdefault.jpg" alt="El Tatuado">
-            </div>
-            <div class="puesto-info">
-              <p class="chico-nombre">El Tatuado</p>
-              <p class="lema">Don Cheto · East Los FM</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=OfXid_DUI-A" target="_blank">▶ Ver video oficial</a>
-            </div>
-          </div>
-
-          <div class="puesto">
-            <p class="lugar">5</p>
-            <div class="puesto-fotos">
-              <img class="miniatura" src="https://img.youtube.com/vi/9e7ZbgQEbNE/mqdefault.jpg" alt="R - Cali">
-            </div>
-            <div class="puesto-info">
-              <p class="chico-nombre">R - Cali</p>
-              <p class="lema">A$AP Rocky · Radio Los Santos</p>
-              <a class="cancion" href="https://www.youtube.com/watch?v=9e7ZbgQEbNE" target="_blank">▶ Ver video oficial</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- la musica original, la puse en una ficha como las de los personajes -->
-      <div class="seccion">
-        <p class="eyebrow">LA MÚSICA ORIGINAL</p>
-        <h2 class="subtitulo">El score del juego</h2>
-        <p class="intro">Fuera de la radio, las misiones tienen música hecha especialmente para el juego. Se pone más intensa cuando te persigue la policía y más tranquila cuando todo está en calma.</p>
-
-        <!-- el tema principal, reuse la cajita del top pero sin numero -->
-        <div class="puesto tema">
-          <div class="puesto-fotos">
-            <img class="miniatura" src="https://img.youtube.com/vi/Ibaze-ZF3Vk/mqdefault.jpg" alt="Welcome to Los Santos">
-          </div>
-          <div class="puesto-info">
-            <p class="eyebrow">EL TEMA PRINCIPAL</p>
-            <p class="chico-nombre">Welcome to Los Santos</p>
-            <p class="lema">Oh No · 2013</p>
-            <p class="chico-texto">Es la canción oficial del juego. Suena justo al terminar el prólogo, cuando la pantalla pasa de la nieve de North Yankton al sol de Los Santos y salen los créditos de inicio.</p>
-            <a class="cancion" href="https://www.youtube.com/watch?v=Ibaze-ZF3Vk" target="_blank">▶ Escuchar en YouTube</a>
-          </div>
-        </div>
-
-        <!-- el style display block es porque las fichas empiezan escondidas y esta la quiero siempre visible -->
-        <div class="ficha" style="display: block; margin-top: 32px;">
-          <p class="eyebrow">QUIÉN LA HIZO</p>
-          <h3 class="ficha-nombre">Los compositores</h3>
-          <ul class="lista">
-            <li><b>Tangerine Dream:</b> una banda alemana de música electrónica, de las primeras en usar sintetizadores.</li>
-            <li><b>Woody Jackson:</b> también hizo la música de Red Dead Redemption.</li>
-            <li><b>The Alchemist y Oh No:</b> productores de hip hop, después sacaron el disco Welcome to Los Santos.</li>
-            <li><b>Música que cambia:</b> la canción se va armando por capas según lo que pase en la misión.</li>
-            <li><b>Self Radio:</b> en la versión de PC puedes meter tus propias canciones como si fuera otra estación.</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="pie">Proyecto escolar · GTA V y su música son de Rockstar Games</p>
+      <footer class="pie">Proyecto escolar · GTA V y su música son de Rockstar Games</footer>
     </div>
 
     <!-- el ruidito de estatica de cuando cambias de estacion, no se ve porque no tiene controls -->
     <audio id="estatica" src="audios/estatica.wav"></audio>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- este js es aparte del script.js porque ese busca las tarjetas de personajes y aqui no hay -->
     <script src="soundtrack.js"></script>
+    <!-- esto prende las animaciones de aos, el once true es pa que nomas salgan la primera vez -->
+    <script>
+      AOS.init({ once: true, duration: 700 })
+    </script>
   </body>
 </html>

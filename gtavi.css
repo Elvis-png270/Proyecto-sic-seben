@@ -7,16 +7,22 @@
   box-sizing: border-box;
 }
 
+/* bootstrap le pone margen abajo a los p, h1, h2, h3 y ul, aqui se lo quito pa que se vea como antes */
+h1, h2, h3, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* el line-height normal es porque bootstrap lo cambia y todo se veia mas separado */
 body {
   background-color: #f5efe3;
   color: #1c1e1a;
   font-family: Inter, Arial, sans-serif;
+  line-height: normal;
 }
 
+/* el ancho ya lo pone el container de bootstrap, aqui nomas le doy espacio arriba y abajo */
 .contenedor {
-  width: 90%;
-  max-width: 1400px;
-  margin: 0px auto;
   padding-top: 96px;
   padding-bottom: 96px;
 }
@@ -28,9 +34,6 @@ body {
 }
 
 .menu a {
-  display: inline-block;
-  margin-right: 8px;
-  margin-bottom: 8px;
   padding: 8px 18px;
   border: 1px solid #ddd4c3;
   border-radius: 20px;
@@ -66,25 +69,16 @@ body {
   }
 }
 
-/* igual que en personajes: texto a la izquierda y portada a la derecha con float */
+/* ya no lleva float, ahora lo acomoda el row de bootstrap */
 #arriba {
-  overflow: hidden;
   position: relative;
   animation: entrar 0.8s;
 }
 
-#izquierda {
-  float: left;
-  width: 65%;
-}
-
-#derecha {
-  float: right;
-  width: 340px;
-}
-
+/* la portada con height auto pa que no se aplaste, el max-width es pa que no se haga gigante en tablet */
 #portada {
-  width: 340px;
+  width: 100%;
+  max-width: 340px;
   height: auto;
   border-radius: 16px;
   border: 1px solid #ddd4c3;
@@ -119,24 +113,16 @@ body {
 /* ---------- la cuenta regresiva ---------- */
 
 .cuenta {
-  overflow: hidden;
   margin-top: 40px;
 }
 
-/* las 4 cajitas en fila, 22% + 4% de margen x3 + 22% = 100 */
+/* las 4 cajitas, ya no llevan la cuenta de porcentajes, eso lo hacen los col de bootstrap */
 .caja {
-  float: left;
-  width: 22%;
-  margin-right: 4%;
   padding: 20px 0px;
   text-align: center;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
   border-radius: 16px;
-}
-
-.ultima {
-  margin-right: 0px;
 }
 
 .cifra {
@@ -158,10 +144,14 @@ body {
   color: #2e8b3a;
 }
 
+/* el espacio de arriba de los botones */
+.botones {
+  margin-top: 32px;
+}
+
 /* el boton de comprar, grandote y verde pa que se note */
 .comprar {
   display: inline-block;
-  margin-top: 32px;
   padding: 16px 32px;
   border-radius: 30px;
   border: 2px solid #2e8b3a;
@@ -176,18 +166,14 @@ body {
 .comprar:hover {
   background-color: #e07b00;
   border-color: #e07b00;
+  color: #ffffff;
   box-shadow: 0px 12px 30px #f1d5aa;
 }
 
-/* el de xbox va al lado, blanco con borde pa que no se vean dos botones verdes iguales */
+/* el de xbox es blanco con borde pa que no se vean dos botones verdes iguales */
 .xbox {
-  margin-left: 12px;
   background-color: #ffffff;
   color: #2e8b3a;
-}
-
-.xbox:hover {
-  color: #ffffff;
 }
 
 .nota {
@@ -203,13 +189,25 @@ body {
   margin-top: 80px;
 }
 
-/* la imagen del trailer, la miniatura es de 16:9 entonces 720 x 405 queda sin aplastarse */
-/* el display block es pa que el boton quede abajo y no al lado */
+.subtitulo {
+  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
+  font-weight: normal;
+  font-size: 56px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  /* lo mismo que el titulo pero naranja, con contorno mas delgadito y la sombra negra */
+  color: #e07b00;
+  letter-spacing: 1px;
+  text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
+}
+
+/* la imagen del trailer, con width 100% y max-width se hace chica en el cel y en compu se queda en 720 */
+/* el height auto es pa que no se aplaste */
 .trailer {
   display: block;
-  width: 720px;
-  height: 405px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
   border-radius: 16px;
   border: 1px solid #ddd4c3;
   transition: all 0.4s;
@@ -222,10 +220,8 @@ body {
   box-shadow: 0px 16px 40px #f1d5aa;
 }
 
-/* la cajita de la cancion del trailer, igual que las del top del soundtrack */
-/* el overflow hidden es pa que la imagen con float no se salga de la cajita */
+/* la cajita de la cancion del trailer, el d-flex de bootstrap pone la imagen y el texto juntos */
 .cancion-trailer {
-  overflow: hidden;
   max-width: 720px;
   margin-top: 32px;
   padding: 24px;
@@ -235,20 +231,14 @@ body {
   border-radius: 16px;
 }
 
-/* la miniatura del video a la izquierda con float */
+/* la miniatura del video, 240 x 135 es 16:9 */
 .miniatura {
-  float: left;
   width: 240px;
+  max-width: 100%;
   height: 135px;
-  margin-right: 24px;
   border-radius: 10px;
   object-fit: cover;
   background-color: #e9e1d2;
-}
-
-/* el overflow hidden hace que el texto no se meta abajo de la imagen */
-.cancion-info {
-  overflow: hidden;
 }
 
 .cancion-nombre {
@@ -290,18 +280,6 @@ body {
   color: #ffffff;
 }
 
-.subtitulo {
-  font-family: "Pricedown Bl", Anton, Impact, sans-serif;
-  font-weight: normal;
-  font-size: 56px;
-  margin-top: 12px;
-  margin-bottom: 24px;
-  /* lo mismo que el titulo pero naranja, con contorno mas delgadito y la sombra negra */
-  color: #e07b00;
-  letter-spacing: 1px;
-  text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
-}
-
 .ficha {
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
@@ -323,15 +301,9 @@ body {
 
 /* ---------- protagonistas ---------- */
 
-.chicos {
-  overflow: hidden;
-}
-
-/* aqui son nomas 2 entonces cada una agarra casi la mitad */
+/* ya no llevan float, los acomoda el col-md-6 de bootstrap */
 .chico {
-  float: left;
-  width: 48%;
-  margin-right: 4%;
+  height: 100%;
   overflow: hidden;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
@@ -339,10 +311,6 @@ body {
   position: relative;
   top: 0px;
   transition: all 0.4s;
-}
-
-.ultimo {
-  margin-right: 0px;
 }
 
 .chico:hover {
@@ -390,66 +358,40 @@ body {
   color: #8c897e;
 }
 
-/* en el cel quito los float pa que todo quede uno abajo del otro */
+/* en tablet achico tantito el titulo */
+@media (max-width: 991px) {
+  .titulo {
+    font-size: 64px;
+  }
+}
+
+/* en el cel achico letras y espacios, lo de ponerse uno abajo del otro ya lo hace bootstrap */
 @media (max-width: 400px) {
   .contenedor {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  #izquierda {
-    float: none;
-    width: 100%;
-  }
-  #derecha {
-    float: none;
-    width: 100%;
-    margin-top: 32px;
-  }
-  #portada {
-    width: 100%;
-  }
   .titulo {
     font-size: 44px;
   }
   .cifra {
-    font-size: 30px;
-  }
-  .etiqueta {
-    font-size: 9px;
+    font-size: 36px;
   }
   .subtitulo {
     font-size: 36px;
   }
-  /* en el cel la imagen del trailer agarra todo lo ancho */
-  .trailer {
+  /* en el cel los botones agarran todo lo ancho */
+  .comprar {
     width: 100%;
-    height: 190px;
+    text-align: center;
+    font-size: 16px;
   }
-  /* en el cel la miniatura de la cancion va arriba y el texto abajo */
   .miniatura {
-    float: none;
     width: 100%;
     height: 160px;
-    margin-right: 0px;
-    margin-bottom: 16px;
-  }
-  /* en el cel los botones no caben juntos entonces van uno abajo del otro */
-  .comprar {
-    display: block;
-    text-align: center;
-    margin-top: 16px;
-  }
-  .xbox {
-    margin-left: 0px;
   }
   .ficha {
     padding: 24px;
-  }
-  .chico {
-    float: none;
-    width: 100%;
-    margin-right: 0px;
-    margin-bottom: 16px;
   }
   .chico-foto {
     height: 280px;

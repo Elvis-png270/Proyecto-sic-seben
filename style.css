@@ -5,31 +5,35 @@
   box-sizing: border-box;
 }
 
+/* bootstrap le pone margen abajo a los p, h1, h2, h3 y ul, aqui se lo quito pa que se vea como antes */
+h1, h2, h3, p, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* el line-height normal es porque bootstrap lo cambia y todo se veia mas separado */
 body {
   background-color: #f5efe3;
   color: #1c1e1a;
   font-family: Inter, Arial, sans-serif;
+  line-height: normal;
 }
 
+/* el ancho ya lo pone el container de bootstrap, aqui nomas le doy espacio arriba y abajo */
 .contenedor {
-  width: 90%;
-  max-width: 1400px;
-  margin: 0px auto;
   padding-top: 96px;
   padding-bottom: 96px;
 }
 
-/* ---------- menu de arriba (sale en las dos paginas) ---------- */
+/* ---------- menu de arriba (sale en todas las paginas) ---------- */
 
 .menu {
   margin-bottom: 56px;
 }
 
-/* los links del menu como botoncitos redondos, el display inline-block es pa que acepten padding y queden uno al lado del otro */
+/* los links del menu como botoncitos redondos, el d-flex de bootstrap ya los pone en fila */
 /* el text-decoration none le quita la rayita de abajo que traen los links */
 .menu a {
-  display: inline-block;
-  margin-right: 8px;
   padding: 8px 18px;
   border: 1px solid #ddd4c3;
   border-radius: 20px;
@@ -53,20 +57,6 @@ body {
   color: #ffffff;
 }
 
-/* ---------- cosas de la pagina del soundtrack ---------- */
-
-/* el encabezado del soundtrack no tiene portada, nomas le pongo un ancho maximo pa que el texto no quede tan largo */
-.encabezado {
-  max-width: 900px;
-  position: relative;
-  animation: entrar 0.8s;
-}
-
-/* cada seccion del soundtrack, nomas es pa separarlas */
-.seccion {
-  margin-top: 80px;
-}
-
 /* esta es la animacion de entrada, from es como empieza y to es como termina */
 /* empieza invisible y 20px mas abajo, y termina visible en su lugar */
 @keyframes entrar {
@@ -80,28 +70,17 @@ body {
   }
 }
 
-/* el overflow hidden es pa que el div de arriba no se haga chiquito por culpa de los float, si no se lo pongo se encima todo alv */
-/* y le puse la animacion entrar pa que lo de arriba salga suavecito cuando abres la pagina */
+/* le puse la animacion entrar pa que lo de arriba salga suavecito cuando abres la pagina */
+/* ya no lleva float, ahora lo acomoda el row de bootstrap */
 #arriba {
-  overflow: hidden;
   position: relative;
   animation: entrar 0.8s;
 }
 
-/* el float left manda el texto a la izquierda y el float right manda la portada a la derecha */
-#izquierda {
-  float: left;
-  width: 70%;
-}
-
-#derecha {
-  float: right;
-  width: 260px;
-}
-
-/* la portada con height auto pa que no salga aplastada, se acomoda solita */
+/* la portada con height auto pa que no salga aplastada, el max-width es pa que no se haga gigante en tablet */
 #portada {
-  width: 260px;
+  width: 100%;
+  max-width: 300px;
   height: auto;
   border-radius: 16px;
   border: 1px solid #ddd4c3;
@@ -133,15 +112,9 @@ body {
   color: #5b5a52;
 }
 
-/* los numeritos de abajo del texto, otra vez con float pa que queden en fila */
+/* los numeritos de abajo del texto, ahora los pone en fila el d-flex de bootstrap */
 .numeros {
-  overflow: hidden;
   margin-top: 32px;
-}
-
-.numero {
-  float: left;
-  margin-right: 48px;
 }
 
 .cifra {
@@ -150,17 +123,17 @@ body {
   color: #e07b00;
 }
 
+/* ---------- las tarjetas ---------- */
+
+/* el row y los col de bootstrap ya las ponen en fila, aqui nomas el espacio de arriba */
 .tarjetas {
-  overflow: hidden;
   margin-top: 48px;
 }
 
-/* las 4 tarjetas con float left pa que queden en fila, 23% cada una y el margen de 2.66% pa que todo sume 100 (lo saque con calculadora jaja) */
 /* empiezan invisibles (opacity 0) y 24px mas abajo, luego el js les pone la clase visible y ahi si salen, como de fantasma */
+/* el height 100% es pa que todas las de la misma fila midan igual */
 .tarjeta {
-  float: left;
-  width: 23%;
-  margin-right: 2.66%;
+  height: 100%;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
   border-radius: 16px;
@@ -170,11 +143,6 @@ body {
   top: 24px;
   opacity: 0;
   transition: all 0.6s;
-}
-
-/* a la ultima le quito el margen porque si no ya no cabe y se baja*/
-#tarjeta4 {
-  margin-right: 0px;
 }
 
 .visible {
@@ -208,6 +176,7 @@ body {
   width: 100%;
   height: 240px;
   object-fit: cover;
+  object-position: center top;
   transition: all 0.6s;
 }
 
@@ -218,10 +187,7 @@ body {
 }
 
 .info {
-  padding-top: 36px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-bottom: 32px;
+  padding: 32px;
 }
 
 .nombre {
@@ -247,20 +213,14 @@ body {
   min-height: 270px;
 }
 
+/* los dos datos de abajo, el d-flex con justify-content-between de bootstrap ya los manda a cada lado */
 .datos {
-  overflow: hidden;
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #ddd4c3;
 }
 
-.datos div {
-  float: left;
-}
-
-/* como dice .datos .derecha le gana al de arriba y este si se va a la derecha */
 .datos .derecha {
-  float: right;
   text-align: right;
 }
 
@@ -370,16 +330,9 @@ body {
   text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
 
-.chicos {
-  overflow: hidden;
-}
-
-/* las cajitas chiquitas, la misma cuenta de 23% y 2.66% que las tarjetas grandes */
+/* las cajitas chiquitas, ya no llevan float ni la cuenta de porcentajes, eso ahora lo hacen los col de bootstrap */
 .chico {
-  float: left;
-  width: 23%;
-  margin-right: 2.66%;
-  margin-bottom: 24px;
+  height: 100%;
   overflow: hidden;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
@@ -387,10 +340,6 @@ body {
   position: relative;
   top: 0px;
   transition: all 0.4s;
-}
-
-.ultimo {
-  margin-right: 0px;
 }
 
 .chico:hover {
@@ -427,68 +376,11 @@ body {
   font-weight: bold;
 }
 
-/* el min-height es pa que todas las cajitas midan lo mismo aunque un texto sea mas cortito */
 .chico-texto {
   margin-top: 8px;
   font-size: 14px;
   line-height: 1.55;
   color: #5b5a52;
-  min-height: 66px;
-}
-
-/* ---------- pagina del soundtrack ---------- */
-
-/* el cuadrito de la radio va separado de las estaciones */
-#radio {
-  margin-bottom: 32px;
-  transition: all 0.4s;
-}
-
-/* cuando ya hay una estacion sonando el cuadrito se pone verde y con la raya normal */
-.sonando {
-  border-style: solid;
-  border-color: #2e8b3a;
-  color: #2e8b3a;
-  background-color: #ffffff;
-}
-
-/* las barritas del ecualizador, son spans vacios con alto y color nomas */
-.barra {
-  display: inline-block;
-  width: 4px;
-  height: 14px;
-  margin-right: 3px;
-  background-color: #2e8b3a;
-  animation: brincar 0.6s infinite alternate;
-}
-
-/* les pongo diferente delay pa que no brinquen todas al mismo tiempo */
-.b2 {
-  animation-delay: 0.2s;
-}
-
-.b3 {
-  animation-delay: 0.4s;
-}
-
-/* infinite es que se repite pa siempre y alternate que va de ida y de regreso */
-@keyframes brincar {
-  from { height: 4px; }
-  to { height: 16px; }
-}
-
-/* las estaciones tienen manita porque se les puede picar */
-.estaciones .chico {
-  cursor: pointer;
-}
-
-/* los logos no son fotos de personas entonces con contain se ven completitos sin cortarse */
-/* les puse fondo oscuro como la ruedita de la radio del juego */
-.logo {
-  object-fit: contain;
-  object-position: center;
-  padding: 28px;
-  background-color: #1c1e1a;
 }
 
 .pie {
@@ -513,7 +405,7 @@ body {
   border: none;
   background-color: #2e8b3a;
   color: #ffffff;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
   box-shadow: 0px 8px 20px #c9c1b0;
   opacity: 0;
@@ -525,38 +417,28 @@ body {
   background-color: #e07b00;
 }
 
-/* esto nomas jala cuando la pantalla es de menos de 400px (osea en el cel),
-le quito los float pa que todo quede uno abajo del otro */
+/* en tablet (menos de 992px) las tarjetas son de 2 en 2 y ya no hace falta tanto alto minimo */
+@media (max-width: 991px) {
+  .titulo {
+    font-size: 64px;
+  }
+  .texto {
+    min-height: 0px;
+  }
+}
+
+/* esto nomas jala cuando la pantalla es de menos de 400px (osea en el cel), achico las letras y los espacios */
+/* los float ya no se quitan aqui porque bootstrap ya pone todo uno abajo del otro solito */
 @media (max-width: 400px) {
   .contenedor {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  #izquierda {
-    float: none;
-    width: 100%;
-  }
-  #derecha {
-    float: none;
-    margin-top: 32px;
-  }
   .titulo {
     font-size: 44px;
   }
-  .numero {
-    margin-right: 24px;
-  }
   .cifra {
     font-size: 34px;
-  }
-  .tarjeta {
-    float: none;
-    width: 100%;
-    margin-right: 0px;
-    margin-bottom: 20px;
-  }
-  .texto {
-    min-height: 0px;
   }
   .ficha {
     padding: 24px;
@@ -567,16 +449,8 @@ le quito los float pa que todo quede uno abajo del otro */
   .subtitulo {
     font-size: 36px;
   }
-  .chico {
-    float: none;
-    width: 100%;
-    margin-right: 0px;
-  }
   /* en el cel la cajita es mas ancha, entonces le doy mas alto a la foto pa que no se vea aplastada */
   .chico-foto {
     height: 260px;
-  }
-  .chico-texto {
-    min-height: 0px;
   }
 }

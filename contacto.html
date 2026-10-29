@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA V · Contacto</title>
+    <!-- bootstrap pa la rejilla y el formulario, font awesome pa los iconos y aos pa las animaciones al bajar -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <!-- la letra del logo de gta (pricedown), no esta en google fonts entonces la saco de cdnfonts -->
+    <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
+    <!-- esta pagina tiene su propio css como las demas -->
+    <link rel="stylesheet" href="contacto.css">
+  </head>
+
+  <body>
+    <div class="container contenedor">
+
+      <!-- el mismo menu de siempre pero aqui la actual es contacto -->
+      <header>
+        <nav class="menu d-flex flex-wrap gap-2">
+          <a href="index.html"><i class="fa-solid fa-user-group"></i> Personajes</a>
+          <a href="soundtrack.html"><i class="fa-solid fa-radio"></i> Soundtrack</a>
+          <a href="historia.html"><i class="fa-solid fa-book-open"></i> Historia</a>
+          <a href="gtavi.html"><i class="fa-solid fa-gamepad"></i> GTA VI</a>
+          <a href="quiz.html"><i class="fa-solid fa-circle-question"></i> Quiz</a>
+          <a href="contacto.html" class="actual"><i class="fa-solid fa-envelope"></i> Contacto</a>
+          <a href="nosotros.html"><i class="fa-solid fa-user"></i> Nosotros</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="encabezado">
+          <p class="eyebrow">GRAND THEFT AUTO V · CONTACTO</p>
+          <h1 class="titulo">Échame un grito.</h1>
+          <p class="intro">¿Qué te pareció la página? ¿Le falta algo? Llena el formulario y deja tu opinión. Los mensajes se guardan en tu navegador y salen aquí al lado.</p>
+        </section>
+
+        <!-- en compu el formulario va a la izquierda (7 de 12) y los mensajes a la derecha (5 de 12) -->
+        <!-- en cel y tablet van uno abajo del otro -->
+        <section class="seccion row g-4">
+
+          <div class="col-12 col-lg-7" data-aos="fade-up">
+            <!-- el form es el formulario, el novalidate le dice al navegador que no saque sus globitos feos -->
+            <!-- porque los mensajes de error los pongo yo con js y bootstrap -->
+            <!-- los required, minlength, maxlength y type="email" son la validacion de html5, el js los revisa con checkValidity() -->
+            <form id="formulario" class="formulario" novalidate>
+              <p class="eyebrow">TU OPINIÓN</p>
+              <h2 class="subtitulo">Formulario</h2>
+
+              <!-- row g-3 pa poner el nombre y el correo lado a lado en compu (col-md-6) -->
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="nombre" class="form-label"><i class="fa-solid fa-user"></i> Nombre</label>
+                  <input type="text" id="nombre" class="form-control" placeholder="Ej. Franklin" required minlength="3" maxlength="40">
+                  <!-- el invalid-feedback es de bootstrap, nomas sale cuando el input tiene la clase is-invalid -->
+                  <div class="invalid-feedback">Escribe tu nombre (mínimo 3 letras).</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="correo" class="form-label"><i class="fa-solid fa-at"></i> Correo</label>
+                  <input type="email" id="correo" class="form-control" placeholder="tucorreo@ejemplo.com" required>
+                  <div class="invalid-feedback">Escribe un correo de verdad, con @ y todo.</div>
+                </div>
+
+                <!-- el select es la lista que se despliega, la primera opcion va vacia pa obligarte a escoger una -->
+                <div class="col-12 col-md-6">
+                  <label for="personaje" class="form-label"><i class="fa-solid fa-star"></i> Personaje favorito</label>
+                  <select id="personaje" class="form-select" required>
+                    <option value="">Escoge uno...</option>
+                    <option value="Michael">Michael</option>
+                    <option value="Franklin">Franklin</option>
+                    <option value="Trevor">Trevor</option>
+                    <option value="Lester">Lester</option>
+                    <option value="Lamar">Lamar</option>
+                    <option value="Chop">Chop</option>
+                  </select>
+                  <div class="invalid-feedback">Escoge a tu personaje favorito.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="seccion" class="form-label"><i class="fa-solid fa-heart"></i> Lo que más te gustó</label>
+                  <select id="seccion" class="form-select" required>
+                    <option value="">Escoge una...</option>
+                    <option value="Personajes">Personajes</option>
+                    <option value="Soundtrack">Soundtrack</option>
+                    <option value="Historia">Historia</option>
+                    <option value="GTA VI">GTA VI</option>
+                    <option value="Quiz">Quiz</option>
+                  </select>
+                  <div class="invalid-feedback">Escoge una sección.</div>
+                </div>
+
+                <!-- los radio son las bolitas donde nomas puedes escoger una, por eso todos llevan el mismo name -->
+                <div class="col-12">
+                  <p class="form-label"><i class="fa-solid fa-flag-checkered"></i> ¿Ya terminaste GTA V?</p>
+                  <div class="d-flex flex-wrap gap-4" id="grupo-terminado">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="terminado" id="terminado-si" value="Sí">
+                      <label class="form-check-label" for="terminado-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="terminado" id="terminado-no" value="No">
+                      <label class="form-check-label" for="terminado-no">Todavía no</label>
+                    </div>
+                  </div>
+                  <!-- este mensaje lo prende el js a mano porque los radio son varios y no uno solo -->
+                  <p class="error-radio" id="error-terminado">Dime si ya lo terminaste.</p>
+                </div>
+
+                <!-- el textarea es la cajita grande pa escribir varias lineas -->
+                <div class="col-12">
+                  <label for="mensaje" class="form-label"><i class="fa-solid fa-comment"></i> Tu mensaje</label>
+                  <textarea id="mensaje" class="form-control" rows="4" placeholder="¿Qué te pareció la página?" required minlength="10" maxlength="300"></textarea>
+                  <div class="invalid-feedback">El mensaje tiene que tener por lo menos 10 letras.</div>
+                  <!-- el contador de letras, el js lo cambia cada que escribes -->
+                  <p class="contador-letras" id="contador-letras">0 / 300</p>
+                </div>
+
+                <!-- el checkbox es la cajita de palomita -->
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acepto" required>
+                    <label class="form-check-label" for="acepto">Acepto que mi mensaje se guarde en este navegador</label>
+                    <div class="invalid-feedback">Tienes que aceptar pa poder enviar.</div>
+                  </div>
+                </div>
+
+                <div class="col-12 d-flex flex-wrap gap-3">
+                  <!-- el type submit es el que manda el formulario, el js lo cacha antes de que se recargue la pagina -->
+                  <button type="submit" class="enviar"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+                  <!-- el type reset borra todo lo que escribiste -->
+                  <button type="reset" class="limpiar" id="limpiar"><i class="fa-solid fa-eraser"></i> Limpiar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- aqui salen los mensajes que ya mandaste, los saca el js del localStorage -->
+          <aside class="col-12 col-lg-5" data-aos="fade-up">
+            <div class="mensajes">
+              <p class="eyebrow">LO QUE HAN DICHO</p>
+              <h2 class="subtitulo">Mensajes</h2>
+              <p class="vacio" id="vacio">Todavía no hay mensajes, ¡sé el primero!</p>
+              <div id="lista-mensajes"></div>
+              <button class="borrar" id="borrar"><i class="fa-solid fa-trash"></i> Borrar mensajes</button>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="pie">Proyecto escolar · GTA V es de Rockstar Games</footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- sweetalert2 es la libreria de las ventanitas bonitas que salen en medio de la pantalla -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
+    <script src="contacto.js"></script>
+    <!-- esto prende las animaciones de aos, el once true es pa que nomas salgan la primera vez -->
+    <script>
+      AOS.init({ once: true, duration: 700 })
+    </script>
+  </body>
+</html>
