@@ -45,15 +45,15 @@ body {
 }
 
 .menu a:hover {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 /* la pagina en la que estas sale rellena de verde */
 .menu .actual,
 .menu .actual:hover {
-  background-color: #2e8b3a;
-  border-color: #2e8b3a;
+  background-color: #237a30;
+  border-color: #237a30;
   color: #ffffff;
 }
 
@@ -90,7 +90,7 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 .titulo {
@@ -99,9 +99,9 @@ body {
   font-size: 88px;
   margin-top: 28px;
   margin-bottom: 32px;
-  /* blanco con contorno negro como el logo de gta v, el contorno son 8 sombras de 3px (una pa cada lado) */
+  /* naranja oscuro con contorno negro estilo el logo de gta v (antes era blanco pero no pasaba la prueba de contraste), el contorno son 8 sombras de 3px (una pa cada lado) */
   /* y la ultima sombra naranja va mas lejos pa que se vea como sombra de verdad */
-  color: #ffffff;
+  color: #b84a00;
   letter-spacing: 2px;
   text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
 }
@@ -120,7 +120,7 @@ body {
 .cifra {
   font-family: Anton, Impact, sans-serif;
   font-size: 44px;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 /* ---------- las tarjetas ---------- */
@@ -153,15 +153,15 @@ body {
 /* cuando le pasas el mouse se sube tantito y se le pone el borde naranja, nomas pa que se mire chidori */
 .visible:hover {
   top: -6px;
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 16px 40px #f1d5aa;
 }
 
 /* el borde verde de la que seleccionas, le puse tambien el :hover porque si no al pasarle el mouse se ponia naranja otra vez */
 .activa,
 .activa:hover {
-  border-color: #2e8b3a;
-  box-shadow: 0px 0px 0px 2px #2e8b3a;
+  border-color: #237a30;
+  box-shadow: 0px 0px 0px 2px #237a30;
 }
 
 .foto {
@@ -201,7 +201,7 @@ body {
   margin-top: 12px;
   font-size: 15px;
   font-weight: bold;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 /* le puse un alto minimo al texto pa que la rayita de abajo quede pareja en todas las tarjetas */
@@ -226,13 +226,13 @@ body {
 
 .valor {
   font-size: 15px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 .etiqueta {
   margin-top: 4px;
   font-size: 12px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* el textito de "ver ficha completa", con position relative pa poder moverlo con left */
@@ -240,7 +240,7 @@ body {
   margin-top: 20px;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #2e8b3a;
+  color: #237a30;
   position: relative;
   left: 0px;
   transition: all 0.4s;
@@ -249,7 +249,7 @@ body {
 /* cuando pasas el mouse por la tarjeta la flechita se recorre a la derecha, como diciendo "picale" */
 .visible:hover .ver-mas {
   left: 6px;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 /* ---------- las fichas ---------- */
@@ -266,7 +266,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 14px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* las fichas empiezan escondidas con display none, el js les pone display block a la que toca */
@@ -276,7 +276,7 @@ body {
   position: relative;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
-  border-left: 4px solid #2e8b3a;
+  border-left: 4px solid #237a30;
   border-radius: 16px;
   padding: 32px;
   animation: entrar 0.5s;
@@ -325,7 +325,7 @@ body {
   margin-top: 20px;
   margin-bottom: 32px;
   /* lo mismo que el titulo pero naranja, con contorno mas delgadito y la sombra negra */
-  color: #e07b00;
+  color: #b84a00;
   letter-spacing: 1px;
   text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
@@ -344,7 +344,7 @@ body {
 
 .chico:hover {
   top: -4px;
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 12px 30px #f1d5aa;
 }
 
@@ -388,7 +388,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* ---------- boton pa subir ---------- */
@@ -403,7 +403,7 @@ body {
   height: 52px;
   border-radius: 50%;
   border: none;
-  background-color: #2e8b3a;
+  background-color: #237a30;
   color: #ffffff;
   font-size: 20px;
   cursor: pointer;
@@ -414,7 +414,7 @@ body {
 }
 
 #subir:hover {
-  background-color: #e07b00;
+  background-color: #b84a00;
 }
 
 /* en tablet (menos de 992px) las tarjetas son de 2 en 2 y ya no hace falta tanto alto minimo */

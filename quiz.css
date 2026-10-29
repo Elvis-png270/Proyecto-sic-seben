@@ -48,14 +48,14 @@ body {
 }
 
 .menu a:hover {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 .menu .actual,
 .menu .actual:hover {
-  background-color: #2e8b3a;
-  border-color: #2e8b3a;
+  background-color: #237a30;
+  border-color: #237a30;
   color: #ffffff;
 }
 
@@ -81,7 +81,7 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 .titulo {
@@ -90,9 +90,9 @@ body {
   font-size: 80px;
   margin-top: 28px;
   margin-bottom: 32px;
-  /* blanco con contorno negro como el logo de gta v, el contorno son 8 sombras de 3px (una pa cada lado) */
+  /* naranja oscuro con contorno negro estilo el logo de gta v (antes era blanco pero no pasaba la prueba de contraste), el contorno son 8 sombras de 3px (una pa cada lado) */
   /* y la ultima sombra naranja va mas lejos pa que se vea como sombra de verdad */
-  color: #ffffff;
+  color: #b84a00;
   letter-spacing: 2px;
   text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
 }
@@ -115,7 +115,7 @@ body {
   margin-bottom: 8px;
   font-family: "Space Mono", monospace;
   font-size: 14px;
-  color: #2e8b3a;
+  color: #237a30;
   cursor: pointer;
 }
 
@@ -137,7 +137,7 @@ body {
 /* el outline none le quita la raya azul que pone el navegador */
 .caja-nombre:focus {
   outline: none;
-  border-color: #e07b00;
+  border-color: #b84a00;
 }
 
 /* el contador de cuantas llevas, como botoncito verde de rayitas */
@@ -145,17 +145,17 @@ body {
   display: inline-block;
   margin-top: 24px;
   padding: 8px 18px;
-  border: 2px dashed #2e8b3a;
+  border: 2px dashed #237a30;
   border-radius: 20px;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 /* el del mejor puntaje en naranja pa que se distinga del contador */
 .mejor {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 /* ---------- las preguntas ---------- */
@@ -170,7 +170,7 @@ body {
   padding: 28px 32px;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
-  border-left: 4px solid #2e8b3a;
+  border-left: 4px solid #237a30;
   border-radius: 16px;
 }
 
@@ -200,16 +200,16 @@ body {
 }
 
 .opcion:hover {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 /* el js le pone la clase bien o mal segun si le atinaste */
 /* les puse el :hover tambien porque si no al pasarle el mouse se ponian naranjas otra vez */
 .bien,
 .bien:hover {
-  background-color: #2e8b3a;
-  border-color: #2e8b3a;
+  background-color: #237a30;
+  border-color: #237a30;
   color: #ffffff;
 }
 
@@ -229,7 +229,7 @@ body {
   padding: 40px;
   text-align: center;
   background-color: #ffffff;
-  border: 2px solid #e07b00;
+  border: 2px solid #b84a00;
   border-radius: 16px;
   box-shadow: 0px 16px 40px #f1d5aa;
   animation: entrar 0.6s;
@@ -241,7 +241,7 @@ body {
   margin-top: 12px;
   font-family: "Pricedown Bl", Anton, Impact, sans-serif;
   font-size: 96px;
-  color: #e07b00;
+  color: #b84a00;
   text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
 
@@ -257,7 +257,7 @@ body {
   padding: 14px 28px;
   border: none;
   border-radius: 30px;
-  background-color: #2e8b3a;
+  background-color: #237a30;
   color: #ffffff;
   font-family: Inter, Arial, sans-serif;
   font-size: 16px;
@@ -267,7 +267,7 @@ body {
 }
 
 .otra-vez:hover {
-  background-color: #e07b00;
+  background-color: #b84a00;
 }
 
 .pie {
@@ -275,7 +275,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* en el cel achico las letras y los espacios */

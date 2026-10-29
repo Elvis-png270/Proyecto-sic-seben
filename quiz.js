@@ -77,7 +77,7 @@ function mostrarResultado() {
       text: "Sacaste " + puntos + " de 8, ese es tu mejor puntaje hasta ahora.",
       icon: "success",
       confirmButtonText: "Va",
-      confirmButtonColor: "#2e8b3a"
+      confirmButtonColor: "#237a30"
     })
   }
 }

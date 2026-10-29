@@ -24,7 +24,7 @@ function sintonizar(numero, nombre) {
     document.getElementById("radio").className = "pista"
     sintonizada = 0
   } else {
-    document.getElementById("estacion" + numero).style.borderColor = "#2e8b3a"
+    document.getElementById("estacion" + numero).style.borderColor = "#237a30"
     // el innerHTML deja meter etiquetas, las 3 rayitas son las barritas que brincan (la animacion esta en el css)
     document.getElementById("radio").innerHTML = "<span class='barra b1'></span><span class='barra b2'></span><span class='barra b3'></span> Sintonizando: " + nombre
     document.getElementById("radio").className = "pista sonando"

@@ -45,15 +45,15 @@ body {
 }
 
 .menu a:hover {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 /* la pagina en la que estas sale rellena de verde */
 .menu .actual,
 .menu .actual:hover {
-  background-color: #2e8b3a;
-  border-color: #2e8b3a;
+  background-color: #237a30;
+  border-color: #237a30;
   color: #ffffff;
 }
 
@@ -87,7 +87,7 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 .titulo {
@@ -96,9 +96,9 @@ body {
   font-size: 88px;
   margin-top: 28px;
   margin-bottom: 32px;
-  /* blanco con contorno negro como el logo de gta v, el contorno son 8 sombras de 3px (una pa cada lado) */
+  /* naranja oscuro con contorno negro estilo el logo de gta v (antes era blanco pero no pasaba la prueba de contraste), el contorno son 8 sombras de 3px (una pa cada lado) */
   /* y la ultima sombra naranja va mas lejos pa que se vea como sombra de verdad */
-  color: #ffffff;
+  color: #b84a00;
   letter-spacing: 2px;
   text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
 }
@@ -110,7 +110,7 @@ body {
   margin-top: 20px;
   margin-bottom: 32px;
   /* lo mismo que el titulo pero naranja, con contorno mas delgadito y la sombra negra */
-  color: #e07b00;
+  color: #b84a00;
   letter-spacing: 1px;
   text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
@@ -129,20 +129,20 @@ body {
 .cifra {
   font-family: Anton, Impact, sans-serif;
   font-size: 44px;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 .etiqueta {
   margin-top: 4px;
   font-size: 12px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 .lema {
   margin-top: 4px;
   font-size: 15px;
   font-weight: bold;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 /* ---------- la radio ---------- */
@@ -155,7 +155,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 14px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* el cuadrito de la radio va separado de las estaciones */
@@ -167,8 +167,8 @@ body {
 /* cuando ya hay una estacion sonando el cuadrito se pone verde y con la raya normal */
 .sonando {
   border-style: solid;
-  border-color: #2e8b3a;
-  color: #2e8b3a;
+  border-color: #237a30;
+  color: #237a30;
   background-color: #ffffff;
 }
 
@@ -178,7 +178,7 @@ body {
   width: 4px;
   height: 14px;
   margin-right: 3px;
-  background-color: #2e8b3a;
+  background-color: #237a30;
   animation: brincar 0.6s infinite alternate;
 }
 
@@ -230,7 +230,7 @@ body {
 
 .chico:hover {
   top: -4px;
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 12px 30px #f1d5aa;
 }
 
@@ -291,7 +291,7 @@ body {
 
 .puesto:hover {
   top: -4px;
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 12px 30px #f1d5aa;
 }
 
@@ -301,7 +301,7 @@ body {
   font-family: Anton, Impact, sans-serif;
   font-size: 72px;
   line-height: 1;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 /* las miniaturas de youtube son de 16:9 entonces 240 x 135 quedan sin aplastarse */
@@ -318,7 +318,7 @@ body {
 /* la cajita del tema principal va separada del texto de arriba y con la raya verde como las fichas */
 .tema {
   margin-top: 32px;
-  border-left: 4px solid #2e8b3a;
+  border-left: 4px solid #237a30;
 }
 
 /* la segunda cancion del empate con mas espacio arriba pa que se vea separada */
@@ -331,17 +331,17 @@ body {
   display: inline-block;
   margin-top: 12px;
   padding: 6px 14px;
-  border: 1px solid #e07b00;
+  border: 1px solid #b84a00;
   border-radius: 20px;
   font-family: "Space Mono", monospace;
   font-size: 12px;
-  color: #e07b00;
+  color: #b84a00;
   text-decoration: none;
   transition: all 0.3s;
 }
 
 .cancion:hover {
-  background-color: #e07b00;
+  background-color: #b84a00;
   color: #ffffff;
 }
 
@@ -351,7 +351,7 @@ body {
   margin-top: 32px;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
-  border-left: 4px solid #2e8b3a;
+  border-left: 4px solid #237a30;
   border-radius: 16px;
   padding: 32px;
 }
@@ -381,7 +381,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* en tablet achico tantito el titulo */

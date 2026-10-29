@@ -96,7 +96,7 @@ formulario.addEventListener("submit", function (e) {
       text: "Revisa los campos que salen en rojo.",
       icon: "error",
       confirmButtonText: "Va, lo reviso",
-      confirmButtonColor: "#e07b00"
+      confirmButtonColor: "#b84a00"
     })
     return
   }
@@ -123,7 +123,7 @@ formulario.addEventListener("submit", function (e) {
     text: "Gracias " + nuevo.nombre + ", tu opinión ya salió en la lista.",
     icon: "success",
     confirmButtonText: "De nada",
-    confirmButtonColor: "#2e8b3a"
+    confirmButtonColor: "#237a30"
   })
 
   // limpio el formulario y le quito los colores verdes y rojos
@@ -195,7 +195,7 @@ document.querySelector("#borrar").addEventListener("click", function () {
     confirmButtonText: "Sí, bórralos",
     cancelButtonText: "Mejor no",
     confirmButtonColor: "#c0392b",
-    cancelButtonColor: "#8c897e"
+    cancelButtonColor: "#6b685e"
   }).then(function (respuesta) {
     // el .then espera a que le piques a un boton de la ventanita, isConfirmed es true si le diste a que si
     if (respuesta.isConfirmed) {

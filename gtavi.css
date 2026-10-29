@@ -45,14 +45,14 @@ body {
 }
 
 .menu a:hover {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 .menu .actual,
 .menu .actual:hover {
-  background-color: #2e8b3a;
-  border-color: #2e8b3a;
+  background-color: #237a30;
+  border-color: #237a30;
   color: #ffffff;
 }
 
@@ -88,7 +88,7 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 .titulo {
@@ -97,9 +97,9 @@ body {
   font-size: 88px;
   margin-top: 28px;
   margin-bottom: 32px;
-  /* blanco con contorno negro como el logo de gta v, el contorno son 8 sombras de 3px (una pa cada lado) */
+  /* naranja oscuro con contorno negro estilo el logo de gta v (antes era blanco pero no pasaba la prueba de contraste), el contorno son 8 sombras de 3px (una pa cada lado) */
   /* y la ultima sombra naranja va mas lejos pa que se vea como sombra de verdad */
-  color: #ffffff;
+  color: #b84a00;
   letter-spacing: 2px;
   text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
 }
@@ -128,20 +128,20 @@ body {
 .cifra {
   font-family: Anton, Impact, sans-serif;
   font-size: 56px;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 .etiqueta {
   font-family: "Space Mono", monospace;
   font-size: 12px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* este sale cuando ya llego la fecha */
 .salio {
   font-family: Anton, Impact, sans-serif;
   font-size: 48px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 /* el espacio de arriba de los botones */
@@ -154,8 +154,8 @@ body {
   display: inline-block;
   padding: 16px 32px;
   border-radius: 30px;
-  border: 2px solid #2e8b3a;
-  background-color: #2e8b3a;
+  border: 2px solid #237a30;
+  background-color: #237a30;
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
@@ -164,8 +164,8 @@ body {
 }
 
 .comprar:hover {
-  background-color: #e07b00;
-  border-color: #e07b00;
+  background-color: #b84a00;
+  border-color: #b84a00;
   color: #ffffff;
   box-shadow: 0px 12px 30px #f1d5aa;
 }
@@ -173,14 +173,14 @@ body {
 /* el de xbox es blanco con borde pa que no se vean dos botones verdes iguales */
 .xbox {
   background-color: #ffffff;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 .nota {
   margin-top: 12px;
   font-family: "Space Mono", monospace;
   font-size: 12px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* ---------- secciones de abajo ---------- */
@@ -196,7 +196,7 @@ body {
   margin-top: 12px;
   margin-bottom: 24px;
   /* lo mismo que el titulo pero naranja, con contorno mas delgadito y la sombra negra */
-  color: #e07b00;
+  color: #b84a00;
   letter-spacing: 1px;
   text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
@@ -216,7 +216,7 @@ body {
 /* cuando le pasas el mouse se sube tantito con borde naranja como las cajitas */
 .trailer:hover {
   transform: translateY(-4px);
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 16px 40px #f1d5aa;
 }
 
@@ -227,7 +227,7 @@ body {
   padding: 24px;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
-  border-left: 4px solid #2e8b3a;
+  border-left: 4px solid #237a30;
   border-radius: 16px;
 }
 
@@ -251,7 +251,7 @@ body {
   margin-top: 2px;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 .cancion-texto {
@@ -266,24 +266,24 @@ body {
   display: inline-block;
   margin-top: 12px;
   padding: 6px 14px;
-  border: 1px solid #e07b00;
+  border: 1px solid #b84a00;
   border-radius: 20px;
   font-family: "Space Mono", monospace;
   font-size: 12px;
-  color: #e07b00;
+  color: #b84a00;
   text-decoration: none;
   transition: all 0.3s;
 }
 
 .escuchar:hover {
-  background-color: #e07b00;
+  background-color: #b84a00;
   color: #ffffff;
 }
 
 .ficha {
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
-  border-left: 4px solid #2e8b3a;
+  border-left: 4px solid #237a30;
   border-radius: 16px;
   padding: 32px;
 }
@@ -315,7 +315,7 @@ body {
 
 .chico:hover {
   top: -4px;
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 12px 30px #f1d5aa;
 }
 
@@ -355,7 +355,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* en tablet achico tantito el titulo */

@@ -45,14 +45,14 @@ body {
 }
 
 .menu a:hover {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 .menu .actual,
 .menu .actual:hover {
-  background-color: #2e8b3a;
-  border-color: #2e8b3a;
+  background-color: #237a30;
+  border-color: #237a30;
   color: #ffffff;
 }
 
@@ -79,7 +79,7 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 .titulo {
@@ -88,9 +88,9 @@ body {
   font-size: 88px;
   margin-top: 28px;
   margin-bottom: 32px;
-  /* blanco con contorno negro como el logo de gta v, el contorno son 8 sombras de 3px (una pa cada lado) */
+  /* naranja oscuro con contorno negro estilo el logo de gta v (antes era blanco pero no pasaba la prueba de contraste), el contorno son 8 sombras de 3px (una pa cada lado) */
   /* y la ultima sombra naranja va mas lejos pa que se vea como sombra de verdad */
-  color: #ffffff;
+  color: #b84a00;
   letter-spacing: 2px;
   text-shadow: -3px -3px 0px #1c1e1a, 3px -3px 0px #1c1e1a, -3px 3px 0px #1c1e1a, 3px 3px 0px #1c1e1a, 0px -3px 0px #1c1e1a, 0px 3px 0px #1c1e1a, -3px 0px 0px #1c1e1a, 3px 0px 0px #1c1e1a, 8px 8px 0px #e07b00;
 }
@@ -112,7 +112,7 @@ body {
   margin-top: 8px;
   margin-bottom: 24px;
   /* lo mismo que el titulo pero naranja, con contorno mas delgadito y la sombra negra */
-  color: #e07b00;
+  color: #b84a00;
   letter-spacing: 1px;
   text-shadow: -2px -2px 0px #1c1e1a, 2px -2px 0px #1c1e1a, -2px 2px 0px #1c1e1a, 2px 2px 0px #1c1e1a, 0px -2px 0px #1c1e1a, 0px 2px 0px #1c1e1a, -2px 0px 0px #1c1e1a, 2px 0px 0px #1c1e1a, 5px 5px 0px #1c1e1a;
 }
@@ -126,7 +126,7 @@ body {
   padding: 32px;
   background-color: #ffffff;
   border: 1px solid #ddd4c3;
-  border-left: 4px solid #2e8b3a;
+  border-left: 4px solid #237a30;
   border-radius: 16px;
 }
 
@@ -135,7 +135,7 @@ body {
   margin-bottom: 8px;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #2e8b3a;
+  color: #237a30;
 }
 
 /* las cajitas de escribir y las listas, les cambio los colores de bootstrap por los de la pagina */
@@ -152,18 +152,18 @@ body {
 .form-control:focus,
 .form-select:focus {
   background-color: #ffffff;
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 0px 0px 4px #f1d5aa;
 }
 
 /* las bolitas y la palomita en verde cuando estan escogidas */
 .form-check-input:checked {
-  background-color: #2e8b3a;
-  border-color: #2e8b3a;
+  background-color: #237a30;
+  border-color: #237a30;
 }
 
 .form-check-input:focus {
-  border-color: #e07b00;
+  border-color: #b84a00;
   box-shadow: 0px 0px 0px 4px #f1d5aa;
 }
 
@@ -185,15 +185,15 @@ body {
   text-align: right;
   font-family: "Space Mono", monospace;
   font-size: 12px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* el boton de enviar, verde y redondo como el de comprar de gta vi */
 .enviar {
   padding: 14px 28px;
-  border: 2px solid #2e8b3a;
+  border: 2px solid #237a30;
   border-radius: 30px;
-  background-color: #2e8b3a;
+  background-color: #237a30;
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
@@ -201,8 +201,8 @@ body {
 }
 
 .enviar:hover {
-  background-color: #e07b00;
-  border-color: #e07b00;
+  background-color: #b84a00;
+  border-color: #b84a00;
   box-shadow: 0px 12px 30px #f1d5aa;
 }
 
@@ -218,8 +218,8 @@ body {
 }
 
 .limpiar:hover {
-  border-color: #e07b00;
-  color: #e07b00;
+  border-color: #b84a00;
+  color: #b84a00;
 }
 
 /* ---------- los mensajes guardados ---------- */
@@ -231,7 +231,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* cada mensaje es una cajita, el animation entrar hace que salga suavecito cuando lo agregas */
@@ -246,7 +246,7 @@ body {
 
 .mensaje-nombre {
   font-weight: bold;
-  color: #e07b00;
+  color: #b84a00;
 }
 
 .mensaje-texto {
@@ -259,7 +259,7 @@ body {
   margin-top: 8px;
   font-family: "Space Mono", monospace;
   font-size: 11px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 .borrar {
@@ -270,7 +270,7 @@ body {
   background-color: #ffffff;
   font-family: "Space Mono", monospace;
   font-size: 12px;
-  color: #8c897e;
+  color: #6b685e;
   transition: all 0.3s;
 }
 
@@ -284,7 +284,7 @@ body {
   text-align: center;
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #8c897e;
+  color: #6b685e;
 }
 
 /* en tablet achico tantito el titulo */
